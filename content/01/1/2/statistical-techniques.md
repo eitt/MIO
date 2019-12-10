@@ -1,5 +1,6 @@
 # Statistical Techniques
 
+LEONARDO TALERO: ESTA ES UNA PRUEBA PARA MODIFICAR LA ESTRUCTURA DEL LIBRO BASADO EN ALTERAR ARCHIVOS YA ESCRITOS
 The discipline of statistics has long addressed the same fundamental challenge
 as data science: how to draw robust conclusions about the world using incomplete
 information. One of the most important contributions of statistics is a
