@@ -1,5 +1,6 @@
 # What is Data Science
 
+LEONARDO TALERO: ESTA ES UNA PRUEBA PARA MODIFICAR LA ESTRUCTURA DEL LIBRO BASADO EN ALTERAR ARCHIVOS YA ESCRITOS
 Data Science is about drawing useful conclusions from large and diverse data
 sets through exploration, prediction, and inference.  Exploration involves
 identifying patterns in information.  Prediction involves using information
