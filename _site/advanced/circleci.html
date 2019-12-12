@@ -26,8 +26,8 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "http://localhost:4000/advanced/circleci.html",
   "headline": "Automatically building, previewing, and pushing your book with CircleCI",
-  "datePublished": "2019-12-12T10:25:00-05:00",
-  "dateModified": "2019-12-12T10:25:00-05:00",
+  "datePublished": "2019-12-12T11:02:39-05:00",
+  "dateModified": "2019-12-12T11:02:39-05:00",
   "description": "        Automatically building, previewing, and pushing your book with CircleCI    CircleCI is a continuous integration service that lets you run various com...",
   "author": {
     "@type": "Person",
@@ -582,7 +582,7 @@ initFunction(initPrint)
           href="/intro.html"
         >
           
-          Introducción
+          Books with Jupyter
         </a>
       </li>
 
@@ -623,7 +623,7 @@ initFunction(initPrint)
           
             1.
           
-          Introducción
+          Books with Jupyter
         </a>
       </li>
 
@@ -1809,7 +1809,7 @@ initFunction(initPrint)
 
 <div class="jb_cell tag_jekyll-raw">
 
-<div class="cell border-box-sizing text_cell rendered tag_jekyll-raw"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>CircleCI is a continuous integration service that lets you run various commands
 every time a new change is made to a repository. This can be used to <strong>build your book</strong>,
@@ -1848,7 +1848,7 @@ but we'll add to it later:</p>
 
 <div class="jb_cell tag_full_width">
 
-<div class="cell border-box-sizing text_cell rendered tag_full_width"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="c1"># Tell CircleCI which version of its API you wish to use</span>
 <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.1</span>
@@ -1900,7 +1900,7 @@ add to the skeleton configuration you've created above:</p>
 
 <div class="jb_cell tag_full_width">
 
-<div class="cell border-box-sizing text_cell rendered tag_full_width"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="nt">jobs</span><span class="p">:</span>
   <span class="nt">build_page_files</span><span class="p">:</span>
@@ -1968,7 +1968,7 @@ install Jekyll and the dependencies needed to build your book's HTML using
 
 <div class="jb_cell tag_full_width">
 
-<div class="cell border-box-sizing text_cell rendered tag_full_width"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="nt">commands</span><span class="p">:</span>
   <span class="nt">prepare_jekyll_installation</span><span class="p">:</span>
@@ -2020,7 +2020,7 @@ install Jekyll and the dependencies needed to build your book's HTML using
 
 <div class="jb_cell tag_full_width">
 
-<div class="cell border-box-sizing text_cell rendered tag_full_width"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Step-3:-Build-and-preview-your-book's-HTML-with-Circle-artifacts">Step 3: Build and preview your book's HTML with Circle artifacts<a class="anchor-link" href="#Step-3:-Build-and-preview-your-book's-HTML-with-Circle-artifacts"> </a></h2><p>We'll re-use the command from above in order to preview our built site
 using Circle artifacts. Add the job below to your CircleCI configuration file.</p>
@@ -2076,7 +2076,7 @@ to tell Circle to automatically push to this repository.</p>
 
 <div class="jb_cell tag_full_width tag_jekyll-raw">
 
-<div class="cell border-box-sizing text_cell rendered tag_full_width tag_jekyll-raw"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="nt">jobs</span><span class="p">:</span>
   <span class="nt">deploy</span><span class="p">:</span>
@@ -2116,7 +2116,7 @@ to tell Circle to automatically push to this repository.</p>
 
 <div class="jb_cell tag_jekyll-raw">
 
-<div class="cell border-box-sizing text_cell rendered tag_jekyll-raw"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this case we've used the excellent <a href="https://github.com/davisp/ghp-import">ghp-import tool for pushing to github pages</a>.
 The command pushes the contents of <code>./_site</code> (your book's HTML) to the <code>gh-pages</code>
@@ -2149,7 +2149,7 @@ Here's the configuration for this:</p>
 
 <div class="jb_cell tag_full_width">
 
-<div class="cell border-box-sizing text_cell rendered tag_full_width"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="nt">workflows</span><span class="p">:</span>
   <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
@@ -2202,7 +2202,7 @@ step above in a <em>single</em> file.</p>
 
 <div class="jb_cell tag_full_width tag_jekyll-raw">
 
-<div class="cell border-box-sizing text_cell rendered tag_full_width tag_jekyll-raw"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="c1"># NOTE: This is an example CircleCI configuration that</span>
 <span class="c1"># will build your book and preview its HTML content.</span>
