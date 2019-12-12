@@ -22,7 +22,8 @@
 - divider: true #Permite genrar una línea divisoria entre cada gran capítulo, estaba pensando en usarla para las OPER
 
 - header: Modelado Matemático
-- url: /mm/Intro
+- url: /mm/intro
+  not_numbered: true
   sections:
   - url: /mm/1/01
   - url: /mm/1/02
