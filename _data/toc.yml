@@ -33,6 +33,7 @@
 - header: Programación Dinámica
 - header: Problema del Agente Viajero (TSP)
 - header: Problema de Transporte
+- url: /tr/intro
 - divider: true #Propongo dividir en dos secciones según el enfoque estocástico
 - header: Procesos Estocásticos
 - header: Teoría de Colas
