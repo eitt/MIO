@@ -24,6 +24,7 @@
 - header: Modelado Matemático
 - url: /mm/intro
   not_numbered: true
+  expand_sections: true
   sections:
   - url: /mm/1/01
   - url: /mm/1/02
