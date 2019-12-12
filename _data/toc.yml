@@ -22,10 +22,10 @@
 - divider: true #Permite genrar una línea divisoria entre cada gran capítulo, estaba pensando en usarla para las OPER
 
 - header: Modelado Matemático
-- url: /Modelado_Matemático/Intro
+- url: /MM/Intro
   sections:
-  - url: /Modelado_Matemático/1/01
-  - url: /Modelado_Matemático/1/02
+  - url: /MM/1/01
+  - url: /MM/1/02
 - header: Programación Lineal
 - header: Teoría de Redes
 - header: Programación Dinámica
