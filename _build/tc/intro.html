@@ -1,0 +1,764 @@
+---
+interact_link: content/tc/intro.ipynb
+kernel_name: ir
+kernel_path: content/tc
+has_widgets: false
+title: |-
+  Teoría de Colas
+pagenum: 4
+prev_page:
+  url: /mm/1/02.html
+next_page:
+  url: /features/features.html
+suffix: .ipynb
+search: de el en la que clientes m tiempo se es equation servicio una lambda los mu probabilidad para un frac sistema rho promedio y con n t del k distribucin c las begin end por ejemplo cliente colas hora unidad al nmero tasa parmetros como redes llegan tienda modelos elementos poisson exponencial paquete p cuatro cantidad entidades empleado o espera llegadas gerente modelo este caso valor kendall servidores cola tamao mltiples lleguen est departamental atender cul puede horas cdigo minutos notacin mximo llega solo lnea unidades tenga esperar diferentes ciudadanos queueing clases distribuciones tiempos cada llegada perodos dos tres cuenta
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Teoría de Colas</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1-Distribuciones-de-probabilidad">1 Distribuciones de probabilidad<a class="anchor-link" href="#1-Distribuciones-de-probabilidad"> </a></h2><p>Las fuentes de la variación en los problemas de líneas de espera se deben a las <strong>llegadas aleatorias</strong> de los clientes y a las variaciones en los tiempos de servicio. Cada una de estas fuentes se describen con una <strong>distribución de probabilidad</strong>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.1-Distribuciones-de-llegada">1.1 Distribuciones de llegada<a class="anchor-link" href="#1.1-Distribuciones-de-llegada"> </a></h3><p>Especifica la probabilidad que $n$ clientes lleguen en $T$ períodos de tiempo:
+\begin{equation*}
+P(n)=\frac{(\lambda*T)^n}{n!}
+\end{equation*}
+para $n=1,2,...$ Donde $P(n)$ es la probabilidad de $n$ llegadas en $T$ períodos de tiempo, y $\lambda$ es el número promedio de clientes que llegan por período.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Ejemplo-#-1">Ejemplo # 1<a class="anchor-link" href="#Ejemplo-#-1"> </a></h4><p>El gerente está rediseñando el proceso de servicio al cliente en una tienda departamental. Es importante atender a cuatro clientes. Los clientes llegan al mostrador a una tasa de dos clientes por hora. ¿Cuál es la probabilidad que cuatro clientes lleguen en cualquier hora?</p>
+<h4 id="Soluci&#243;n-Ejemplo-#-1">Soluci&#243;n Ejemplo # 1<a class="anchor-link" href="#Soluci&#243;n-Ejemplo-#-1"> </a></h4><p>El primer paso es identificar los parámetros del modelo, en este caso, tenemos tres parámetros: $n, \lambda, T$. Teniendo en cuenta que $n$ indica la cantidad de entidades en el sistema, para el ejemplo, el valor de $n$ es igual a cuatro clientes, es decir, $n=4 [clientes]$. Por otra parte, la tasa se puede calcular como la relación entre el número de entidades en un determinado tiempo, para el preente ejemplo, llegan dos clientes en una hora, es decir, $\lambda= (2/1) [clientes/horas]$. Finalmente, la idea es calcular la probabilidad de que lleguen en cualuqier hora, por tanto, se tomará como unidad de tiempo un única hora $T=1 [horas]$
+En el código, se asigna el valor a la variable de la siguiente manera:</p>
+
+<pre><code>
+# Asignación del valor de la variable n
+n &lt;- 4
+lambda &lt;- 2/1
+T &lt;- 1</code></pre>
+<p>A continuación, se ejecuta el código para evaluar la probabilidad</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#Se ingresan los parámetros de entrada</span>
+<span class="n">n</span> <span class="o">&lt;-</span> <span class="m">4</span>
+<span class="n">lambda</span> <span class="o">&lt;-</span> <span class="m">2</span><span class="o">/</span><span class="m">1</span>
+<span class="bp">T</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="c1"># Se calcula el valor de la probabilidad</span>
+<span class="n">P</span> <span class="o">&lt;-</span> <span class="p">(((</span><span class="n">lambda</span><span class="o">*</span><span class="bp">T</span><span class="p">)</span><span class="n">^n</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span><span class="o">*</span><span class="nf">exp</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="nf">^</span><span class="p">(</span><span class="o">-</span><span class="n">lambda</span><span class="o">*</span><span class="bp">T</span><span class="p">)</span>
+<span class="c1"># Se imprime la solución del ejercicio</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;La probabilidad de que hayan &quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span><span class="s">&quot; entidades durante &quot;</span><span class="p">,</span> <span class="bp">T</span><span class="p">,</span> <span class="s">&quot; horas es: &quot;</span><span class="p">,</span><span class="n">P</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] &#34;La probabilidad de que hayan 4 entidades durante 1 horas es: 0.0902235221577418&#34;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Ejercicio-#-1">Ejercicio # 1<a class="anchor-link" href="#Ejercicio-#-1"> </a></h4><p>El gerente está rediseñando el proceso de servicio al cliente en una tienda departamental. Es importante atender a cuatro clientes. Los clientes llegan al mostrador a una tasa de dos clientes por hora. ¿Cuál es la probabilidad que cuatro clientes lleguen en cualquier hora? <strong>Trabaje los tiempos en minutos</strong>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#Se ingresan los parámetros de entrada</span>
+<span class="n">n</span> <span class="o">&lt;-</span><span class="m">40</span>
+<span class="n">lambda</span> <span class="o">&lt;-</span> <span class="m">40</span>
+<span class="bp">T</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="c1"># Se calcula el valor de la probabilidad</span>
+<span class="n">P</span> <span class="o">&lt;-</span>  <span class="p">(((</span><span class="n">lambda</span><span class="o">*</span><span class="bp">T</span><span class="p">)</span><span class="n">^n</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span><span class="o">*</span><span class="nf">exp</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="nf">^</span><span class="p">(</span><span class="o">-</span><span class="n">lambda</span><span class="o">*</span><span class="bp">T</span><span class="p">)</span>
+<span class="c1"># Se imprime la solución del ejercicio</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;La probabilidad de que hayan &quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span><span class="s">&quot; entidades durante &quot;</span><span class="p">,</span> <span class="bp">T</span><span class="p">,</span> <span class="s">&quot; horas es: &quot;</span><span class="p">,</span><span class="n">P</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] &#34;La probabilidad de que hayan 40 entidades durante 1 horas es: 0.0629470394235923&#34;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Ejemplo-#-2">Ejemplo # 2<a class="anchor-link" href="#Ejemplo-#-2"> </a></h4><p>Para los datos del ejercicio Número 1, suponga que se quiere conocer como cambia la probabilidad durante 4 horas en intervalos de 30 minutos.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Para empezar se crea una función que calcule la probabilidad, teniendo en cuenta la cantidad de intervalos</span>
+<span class="c1"># Se propone una función que reciba cuatro parámetros: x1=n, x2=lambda, x3=Número de horas (T), x4 = número de intervalos / hora</span>
+<span class="n">Probabilidades</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span><span class="n">x4</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="c1">#Una vez se ejecuta la función, se crea un vector que registre los valores de T, desde cero hasta cuatro horas</span>
+<span class="c1">#Se calcula el tamaño del vector</span>
+<span class="n">longitud</span> <span class="o">&lt;-</span> <span class="n">x3</span><span class="o">*</span><span class="n">x4</span>
+<span class="c1">#Se crea el vector de tiempos</span>
+<span class="n">tiempo</span> <span class="o">&lt;-</span> <span class="m">0</span><span class="o">:</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+<span class="c1">#Se crea el vector de probabilidades en cero que tenga la misma longitud que el vector tiempos</span>
+<span class="n">probabilidades</span> <span class="o">&lt;-</span> <span class="n">tiempo</span><span class="o">*</span><span class="m">0</span>
+<span class="c1">#Ahora se crea un bucle para evaluar la probabilidad en cada instante de tiempo</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">longitud</span><span class="m">+1</span><span class="p">){</span>
+  <span class="n">probabilidades[i]</span><span class="o">&lt;-</span><span class="p">(((</span><span class="n">x2</span><span class="o">*</span><span class="n">tiempo[i]</span><span class="p">)</span><span class="n">^n</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nf">factorial</span><span class="p">(</span><span class="n">x1</span><span class="p">)))</span><span class="o">*</span><span class="nf">exp</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="nf">^</span><span class="p">(</span><span class="o">-</span><span class="n">x2</span><span class="o">*</span><span class="n">tiempo[i]</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">#una vez finalizado el bucle, almacenamos el resultado en variables globales</span>
+<span class="n">TIEMPOS</span> <span class="o">&lt;&lt;-</span> <span class="n">tiempo</span>
+<span class="n">PROBABILIDADES</span> <span class="o">&lt;&lt;-</span> <span class="n">probabilidades</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.2-Distribuciones-de-tiempo-de-servicio">1.2 Distribuciones de tiempo de servicio<a class="anchor-link" href="#1.2-Distribuciones-de-tiempo-de-servicio"> </a></h3><p>Describe la probabilidad que el tiempo de servicio del cliente en una instalación particular no sea mayor de $T$ períodos de tiempo.</p>
+\begin{equation*}
+P(t &lt; T)=1-e^{-\mu*T}
+\end{equation*}<p>Donde $\mu$ es el número promedio de clientes que terminan el servicio por periodo, $t$ es el tiempo de servicio del cliente y $T$ el tiempo de servicio objetivo.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Ejemplo-#-3">Ejemplo # 3<a class="anchor-link" href="#Ejemplo-#-3"> </a></h4><p>El gerente de la tienda departamental del ejemplo anterior, debe determinar si es necesario más entrenamiento para el empleado de servicio al cliente. El empleado de servicio al cliente puede atender un promedio de tres clientes por hora. ¿Cuál es la probabilidad que el empleado atienda a un cliente en menos de 10 minutos?</p>
+<h4 id="Soluci&#243;n-Ejemplo-#-3">Soluci&#243;n Ejemplo # 3<a class="anchor-link" href="#Soluci&#243;n-Ejemplo-#-3"> </a></h4><p>En el código, se asigna el valor a la variable de la siguiente manera:</p>
+
+<pre><code>
+# Asignación del valor a los parámetros
+T &lt;- 10
+mu &lt;- 3/60
+P=1-exp(-mu*T)</code></pre>
+<p>A continuación, se ejecuta el código para evaluar la probabilidad</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Asignación del valor a los parámetros</span>
+<span class="bp">T</span> <span class="o">&lt;-</span> <span class="m">10</span>
+<span class="n">mu</span> <span class="o">&lt;-</span> <span class="m">3</span><span class="o">/</span><span class="m">60</span>
+<span class="n">P</span><span class="o">=</span><span class="m">1</span><span class="o">-</span><span class="nf">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mu</span><span class="o">*</span><span class="bp">T</span><span class="p">)</span>
+<span class="c1"># Se imprime la solución del ejercicio</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;La probabilidad de que el empleado atienda a un cliente en menos de &quot;</span><span class="p">,</span> <span class="bp">T</span><span class="p">,</span><span class="s">&quot; minutos es &quot;</span><span class="p">,</span> <span class="n">P</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] &#34;La probabilidad de que el empleado atienda a un cliente en menos de 10 minutos es 0.393469340287367&#34;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Ejercicio-#-3">Ejercicio # 3<a class="anchor-link" href="#Ejercicio-#-3"> </a></h4><p>Para el modelo del ejemplo número 1 (tema de tasas de servicio), resuleva el siguiente problema:
+El gerente de la tienda departamental del ejemplo anterior, debe determinar si es necesario más entrenamiento para el empleado de servicio al cliente. El empleado de servicio al cliente puede atender un promedio de cuatro clientes por hora. ¿Cuál es la probabilidad que el empleado atienda a un cliente en menos de 15 minutos?</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#Desarrollo del Ejecicio #1 de tasas de servicio</span>
+
+<span class="c1"># Asignación del valor a los parámetros</span>
+<span class="c1">#Tiempo objetivo</span>
+<span class="bp">T</span> <span class="o">&lt;-</span> 
+<span class="c1">#Tasa de servicio</span>
+<span class="n">mu</span> <span class="o">&lt;-</span> 
+<span class="c1">#Cálculo de probabilidad</span>
+<span class="n">P</span><span class="o">=</span>
+<span class="c1"># Se imprime la solución del ejercicio</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;La probabilidad de que el empleado atienda a un cliente en menos de &quot;</span><span class="p">,</span> <span class="bp">T</span><span class="p">,</span><span class="s">&quot; minutos es &quot;</span><span class="p">,</span> <span class="n">P</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2-Modelos-de-colas">2 Modelos de colas<a class="anchor-link" href="#2-Modelos-de-colas"> </a></h2><p>En general, al discutir el tema de modelos de colas, dependiendo de las características del sistema es posible encontrar diversos esquemas, por tanto, se suele utilizar la notación de Kendall, propuesta por David G. Kendall  en 1953, y que contempla los siguientes parámetros:</p>
+<ul>
+<li><strong>𝑎</strong> : distribución de llegadas</li>
+<li><strong>𝑏</strong> : distribución de salidas (tiempo de servicio)</li>
+<li><strong>𝑐</strong> : cantidad de servidores paralelos (=1,2,3,…,∞)</li>
+<li><strong>𝑑</strong> : disciplina en las colas</li>
+<li><strong>𝑒</strong> : número máximo (finito o infinito) permitido en el sistema (haciendo cola o en servicio)</li>
+<li><strong>𝑓</strong> : tamaño de la fuente solicitante (finita o infinita)</li>
+</ul>
+<p><strong>A continuación, se presenta la notación de Kendall</strong>
+<img src="https://raw.githubusercontent.com/eitt/Teoria_de_Colas/master/Kendall.png" alt="Notación de Kendall"></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.1-Par&#225;metros-de-un-Modelo-de-Colas">2.1 Par&#225;metros de un Modelo de Colas<a class="anchor-link" href="#2.1-Par&#225;metros-de-un-Modelo-de-Colas"> </a></h3><ul>
+<li><strong>𝛌</strong>  Tasa promedio de <strong>llegada</strong> (clientes que llegan/ unidad de tiempo)</li>
+<li><strong>1/𝛌</strong>    Tiempo entre llegadas (unidad de tiempo/cada cliente que llega)</li>
+<li><strong>Μ</strong>  Tasa promedio de servicio (clientes que atiende el servidor/ unidad de tiempo)</li>
+<li><strong>1/μ</strong>    Tiempo de servicio (unidad de tiempo/cliente que se atiende)</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.2-Medidas-de-desempe&#241;o">2.2 Medidas de desempe&#241;o<a class="anchor-link" href="#2.2-Medidas-de-desempe&#241;o"> </a></h3><ul>
+<li>Cantidad promedio de elementos (clientes) en la cola ($𝑳_𝒒$)</li>
+<li>Cantidad promedio de elementos (clientes) en el sistema ($𝑳$)</li>
+<li>Tiempo promedio de elementos (clientes) en la cola ($𝑾_𝒒$)</li>
+<li>Tiempo promedio de elementos (clientes) en el sistema ($𝑾$)</li>
+<li>Probabilidad de encontrar n elementos (clientes) en el sistema ($𝑷_𝒏$)</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.3-Modelos-de-un-solo-servido">2.3 Modelos de un solo servido<a class="anchor-link" href="#2.3-Modelos-de-un-solo-servido"> </a></h3><ol>
+<li>Sistema con capacidad infinita: ( 𝑀 /𝑀 /1 ) : ( 𝐺 / ∞ /∞ )</li>
+<li>Sistema con capacidad finita: ( 𝑀 / 𝑀 / 1 ) : ( 𝐺 / 𝑁 / ∞ )</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.4-Supuestos-del-modelo">2.4 Supuestos del modelo<a class="anchor-link" href="#2.4-Supuestos-del-modelo"> </a></h3><ul>
+<li>La población de clientes es infinita y todos los clientes son pacientes.</li>
+<li>Los clientes llegan conforme a una distribución de <strong>Poisson</strong>, con una tasa media de llegada igual a $λ$.</li>
+<li>La distribución de servicio es <strong>Exponencial</strong>, con una tasa media de servicio iguala a $μ$.</li>
+<li>Los clientes se atienden sobre una base primero en llegar, primero que se atiende.</li>
+<li>La longitud de la línea de espera es ilimitada.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.5-Ecuaciones">2.5 Ecuaciones<a class="anchor-link" href="#2.5-Ecuaciones"> </a></h3><p>2.5.0 <strong>Utilización promedio de la caja:</strong>
+\begin{equation*}
+\rho = \frac{\lambda}{\mu}
+\end{equation*}
+2.5.1 <strong>Probabilidad de que no hayan unidades en el sistema o que la unidad no tenga que esperar:</strong>
+\begin{equation*}
+𝑃_0= 1 - \frac{\lambda}{\mu}= 1 - \rho = \rho(𝑊_𝑞 = 0)
+\end{equation*}</p>
+<p>2.5.2 <strong>Cantidad promedio de unidades en la línea de espera</strong>
+\begin{equation*}
+𝐿_𝑞= \lambda𝑊_𝑞=\frac{\lambda}{\mu(\mu-\lambda)}=\frac{\rho^2}{1-\rho}=ρ𝐿_𝑠
+\end{equation*}</p>
+<p>2.5.3 <strong>Cantidad promedio de unidades en el sistema</strong>
+\begin{equation*}
+𝐿_𝑠= \lambda𝑊_𝑠  =\frac{\lambda}{\mu-\lambda} = 𝐿_𝑞+\frac{\lambda}{\mu} = \frac{\rho}{1-\rho}
+\end{equation*}</p>
+<p>2.5.4 <strong>Tiempo promedio que pasa una unidad en la línea de espera</strong>
+\begin{equation*}
+𝑊_𝑞 =\frac{\rho}{\mu-\lambda}=\frac{\rho}{\mu(1-\rho)}=\frac{L_q}{\lambda}=W_s-\frac{1}{\mu}=\rho W_s
+\end{equation*}</p>
+<p>2.5.5 <strong>Tiempo promedio que pasa una unidad en le sistema</strong>
+\begin{equation*}
+W_s=\frac{1}{\mu-\lambda} = \frac{L_s}{\lambda} = W_q+\frac{1}{\mu}=\frac{1}{\mu(1-\rho)}
+\end{equation*}</p>
+<p>2.5.6 <strong>Probabilidad de que una unidad que llega tenga que esperar en el servicio</strong>
+\begin{equation*}
+P ( W &gt; 0 ) = \rho = \frac{\lambda}{\mu} , Sí: {} \mu &gt; \lambda; {} \rho = \frac{\lambda}{\mu} &lt; 1
+\end{equation*}</p>
+<p>2.5.7 <strong>Probabilidad de n unidades en el sistema</strong>
+\begin{equation*}
+𝑃_𝑛= (1 – \rho ) \rho^𝑛 = (\frac{\lambda}{\mu})^𝑛 𝑃_0
+\end{equation*}</p>
+<p>2.5.8 <strong>Probabilidad de que una unidad que llega tenga que esperar un tiempo mayor que t en la línea de espera</strong>
+\begin{equation*}
+P ( 𝑊_𝑞 &gt; t ) = \rho * 𝑒^{−\mu (1−\rho)𝑡}
+\end{equation*}</p>
+<p>2.5.9 <strong>Probabilidad de que una unidad que llega tenga que esperar un tiempo mayor que t en el sistema</strong>
+\begin{equation*}
+𝑃 ( 𝑊 &gt; 𝑡 ) = 𝑒^{−\mu (1−\rho)𝑡}
+\end{equation*}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.6-Calculadora">2.6 Calculadora<a class="anchor-link" href="#2.6-Calculadora"> </a></h3><p>Una vez definidas las diferentes ecuaciones que permiten describir un sistema de colas, se procede a generar un cálculo para cada uno de los elementos descritos.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Ejemplo-#-4">Ejemplo # 4<a class="anchor-link" href="#Ejemplo-#-4"> </a></h4><p>El gerente de una tienda de abarrotes en una comunidad de jubilados de Sunnyville está interesado en proporcionar buen servicio a los ciudadanos de la tercera edad que compran en su tienda. Actualmente, la tienda tiene una caja de
+cobro exclusiva para los ciudadanos de la tercera edad. En promedio, 30 ciudadanos de la tercera edad llegan por hora a la caja, de acuerdo a una distribución de Poisson, y se atienden a una tasa promedio de 35 clientes por hora, con tiempos de servicio exponencial. Además, suponga que se quiere analizar el sistema y determinar las probabilidades asociadas a la presencia de 5 ciudadanos en el sistema, así como un tiempo de referencia de 5 horas. Determine las características de la operación.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#Previo a empezar es necesario determinar todos los valores de entrada, para este caso son cuatro: </span>
+<span class="c1">#lo indicadores promedios de lambda, mu, así como el número de entidades n y el tiempo de referencia T</span>
+
+<span class="n">lambda</span> <span class="o">&lt;-</span><span class="m">0.5258</span>
+<span class="n">mu</span> <span class="o">&lt;-</span><span class="m">0.607</span>
+<span class="n">n</span> <span class="o">&lt;-</span><span class="m">10</span>
+<span class="n">t</span> <span class="o">&lt;-</span><span class="m">45</span>
+
+<span class="c1"># 0 Utilización promedio de la caja</span>
+<span class="n">rho</span> <span class="o">&lt;-</span><span class="n">lambda</span><span class="o">/</span><span class="n">mu</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;0 Utilización promedio de la caja:&quot;</span><span class="p">,</span><span class="n">rho</span><span class="p">))</span>
+<span class="c1"># 1 Probabilidad de que no hayan unidades en el sistema o que la unidad no tenga que esperar:</span>
+<span class="n">P0</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">-</span><span class="n">rho</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;1 Probabilidad de que no hayan unidades en el sistema o que la unidad no tenga que esperar:&quot;</span><span class="p">,</span><span class="n">P0</span><span class="p">))</span>
+<span class="c1"># 2 Cantidad promedio de unidades en la línea de espera</span>
+<span class="n">LQ</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">rho^2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">rho</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;2 Cantidad promedio de unidades en la línea de espera:&quot;</span><span class="p">,</span><span class="n">LQ</span><span class="p">))</span>
+<span class="c1"># 3 Cantidad promedio de unidades en el sistema</span>
+<span class="n">LS</span> <span class="o">&lt;-</span> <span class="n">rho</span><span class="o">/</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">rho</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;3 Cantidad promedio de unidades en el sistema:&quot;</span><span class="p">,</span><span class="n">LS</span><span class="p">))</span>
+<span class="c1"># 4 Tiempo promedio que pasa una unidad en la línea de espera</span>
+<span class="n">WQ</span> <span class="o">&lt;-</span> <span class="n">rho</span><span class="o">/</span><span class="p">(</span><span class="n">mu</span><span class="o">-</span><span class="n">lambda</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;4 Tiempo promedio que pasa una unidad en la línea de espera:&quot;</span><span class="p">,</span><span class="n">WQ</span><span class="p">))</span>
+<span class="c1"># 5 Tiempo promedio que pasa una unidad en le sistema</span>
+<span class="n">WS</span> <span class="o">&lt;-</span> <span class="n">LS</span><span class="o">/</span><span class="n">lambda</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;5 Tiempo promedio que pasa una unidad en le sistema:&quot;</span><span class="p">,</span><span class="n">WS</span><span class="p">))</span>
+<span class="c1"># 6 Probabilidad de que una unidad que llega tenga que esperar en el servicio</span>
+<span class="n">PW</span> <span class="o">&lt;-</span> <span class="n">rho</span> 
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;6 Probabilidad de que una unidad que llega tenga que esperar en el servicio:&quot;</span><span class="p">,</span><span class="n">PW</span><span class="p">))</span>
+<span class="c1"># 7 Probabilidad de n unidades en el sistema</span>
+<span class="n">PN</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">rho</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">rho^n</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;7 Probabilidad de n unidades en el sistema:&quot;</span><span class="p">,</span><span class="n">PN</span><span class="p">))</span>
+<span class="c1"># 8 Probabilidad de que una unidad que llega tenga que esperar un tiempo mayor que t en la línea de espera</span>
+<span class="n">PWQ</span> <span class="o">&lt;-</span> <span class="n">rho</span><span class="o">*</span><span class="nf">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mu</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">rho</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;8 Probabilidad de que una unidad que llega tenga que esperar un tiempo mayor que t en la línea de esperaa:&quot;</span><span class="p">,</span><span class="n">PWQ</span><span class="p">))</span>
+<span class="c1"># 9 Probabilidad de que una unidad que llega tenga que esperar un tiempo mayor que t en el sistema</span>
+<span class="n">PQS</span> <span class="o">&lt;-</span> <span class="nf">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mu</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">rho</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;9 Probabilidad de que una unidad que llega tenga que esperar un tiempo mayor que t en el sistema:&quot;</span><span class="p">,</span><span class="n">PQS</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] &#34;0 Utilización promedio de la caja: 0.866227347611203&#34;
+[1] &#34;1 Probabilidad de que no hayan unidades en el sistema o que la unidad no tenga que esperar: 0.133772652388797&#34;
+[1] &#34;2 Cantidad promedio de unidades en la línea de espera: 5.60914211051688&#34;
+[1] &#34;3 Cantidad promedio de unidades en el sistema: 6.47536945812808&#34;
+[1] &#34;4 Tiempo promedio que pasa una unidad en la línea de espera: 10.6678244779705&#34;
+[1] &#34;5 Tiempo promedio que pasa una unidad en le sistema: 12.3152709359606&#34;
+[1] &#34;6 Probabilidad de que una unidad que llega tenga que esperar en el servicio: 0.866227347611203&#34;
+[1] &#34;7 Probabilidad de n unidades en el sistema: 0.0318189793753414&#34;
+[1] &#34;8 Probabilidad de que una unidad que llega tenga que esperar un tiempo mayor que t en la línea de esperaa: 0.0224243495111693&#34;
+[1] &#34;9 Probabilidad de que una unidad que llega tenga que esperar un tiempo mayor que t en el sistema: 0.0258873719157089&#34;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3-An&#225;lisis-de-sistemas-de-Colas-en-R">3 An&#225;lisis de sistemas de Colas en R<a class="anchor-link" href="#3-An&#225;lisis-de-sistemas-de-Colas-en-R"> </a></h2><p>Como se mencionó anteriormente en las secciones relaconadas con los modelos de colas, las funciones estadísticas tienen como parámetros de entrada los valores de $\lambda$ y de $\mu$. Con el fin de facilitar los cálculos de dichas funciones diferentes paquetes computacionales se han desarrollado, en este caso, se presenta el paquete denominado <em>queueing: A Package For Analysis Of
+Queueing Networks and Models in R</em>.</p>
+<p>El paquete <em>queueing</em> está diseñado para resolver los modelos de colas, así como para mostrar diferentes métricas de evaluación (o indicadores de desempeño); este paquete se puede utilziar tanto para procesos de colas markovianos, como para redes que intengran diferentes elementos generadores de colas. Para el caso de los modelos que siguen procesos markovianos, el paquete presenta tres estrategias de la manera $M/M/c/K/M/FCFS$. Además, para el caso de análisis de redes, se pueden desarrollar redes siguiendo la notación Jackson para clases abiertas y cerradas.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.1-paquete-Queueing">3.1 paquete Queueing<a class="anchor-link" href="#3.1-paquete-Queueing"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.1.1-Nomenclatura">3.1.1 Nomenclatura<a class="anchor-link" href="#3.1.1-Nomenclatura"> </a></h3><ul>
+<li>$A$: Describe la distribución de probabilidad de tiempo entre llegadas.</li>
+<li>$B$: Describe la distribución de probabilidad de tiempo de servicio.</li>
+<li>$C$: Es el número de servidores o canales.</li>
+<li>$K$: Es el tamaño máximo de las entidades dentro del sistema ($C$ entidades siendo servidas, y $K-C$ entidades en la cola.</li>
+<li>$M$: Corresponde con el tamaño de la población de clientes.</li>
+<li>$Z$: Determina  la disciplina de la cola.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.1.2-Contenido-del-paquete">3.1.2 Contenido del paquete<a class="anchor-link" href="#3.1.2-Contenido-del-paquete"> </a></h3><ul>
+<li>$M/M/1$: Distribución Poisson-Exponencial con un servidor</li>
+<li>$M/M/c$: Distribución Poisson-Exponencial con $c$ servidores</li>
+<li>$M/M/∞$: Distribución Poisson-Exponencial con infinitos servidores</li>
+<li>$M/M/1/K$: Distribución Poisson-Exponencial con un servidor y tamaño máximo de $K$ </li>
+<li>$M/M/c/K$ Distribución Poisson-Exponencial con $c$ servidores y tamaño máximo de $K$</li>
+<li>$M/M/c/c$</li>
+<li>$M/M/1/K/K$</li>
+<li>$M/M/c/K/K$</li>
+<li>$M/M/c/K/m$</li>
+<li>$M/M/∞/K/K$</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.1.3-Modelos-Operacionales">3.1.3 Modelos Operacionales<a class="anchor-link" href="#3.1.3-Modelos-Operacionales"> </a></h3><ul>
+<li>Múltiples canales abiertos de redes Jackson.</li>
+<li>Múltiples canales cerrados de redes Jackson abiertas.</li>
+<li>Redes abiertas de un solo canal y múltiples clases.</li>
+<li>Redes cerradas de un solo canal y múltiples clases</li>
+<li>Redes mixtas de un solo canal y múltiples clases</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.1.4-Calculadoras">3.1.4 Calculadoras<a class="anchor-link" href="#3.1.4-Calculadoras"> </a></h3><ul>
+<li>B-Erlag</li>
+<li>C-Erlang</li>
+<li>Engset</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.1.5-Aplicaci&#243;n-del-paquete-para-resolver-un-sistema-$M/M/1$">3.1.5 Aplicaci&#243;n del paquete para resolver un sistema $M/M/1$<a class="anchor-link" href="#3.1.5-Aplicaci&#243;n-del-paquete-para-resolver-un-sistema-$M/M/1$"> </a></h3><p>En este caso se trabajará con el Ejemplo # 4 solucionado pteviamente; no obstante, teniendo en cuenta que para este primer modelo los parámetros de entrada que se trabajan son únicamente $\lambda$ y $\mu$, sólo es posible calcular las ecuaciones que no tengan en cuenta el número de entidades en el sistema en un determinado tiempo, es decir, no se analizarán aquellas funciones con parámetros u entradas $n$ ni $t$</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Se carga el paquete de R</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">queueing</span><span class="p">)</span>
+<span class="c1"># Se crean los valores de entrada del modelo. La primera parte del código</span>
+<span class="c1"># NewInput determina el método de asignación de parámetros, posteriormente</span>
+<span class="c1"># Se define el tipo de cola a modela, en este caso MM1. Los imputs se cargan </span>
+<span class="c1"># en la variable PARAMETROS. A modo de ejemplo, se trabajará con los valores </span>
+<span class="c1"># del ejercicio </span>
+<span class="n">PARAMETROS</span> <span class="o">&lt;-</span> <span class="nf">NewInput.MM1</span><span class="p">(</span><span class="n">lambda</span><span class="o">=</span><span class="m">30</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="m">35</span><span class="p">)</span>
+<span class="c1"># Se crea el modelo, en este caso, se utiliza el método o función denominado</span>
+<span class="c1"># QueueingModel, éste es alimentado con los parámetros del modelo.</span>
+ <span class="n">MODELO</span> <span class="o">&lt;-</span> <span class="nf">QueueingModel</span><span class="p">(</span><span class="n">PARAMETROS</span><span class="p">)</span>
+<span class="c1"># Se imprimen las salidas del modelo</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">summary</span><span class="p">(</span><span class="n">MODELO</span><span class="p">),</span> <span class="n">digits</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="c1"># Como se observa en las salidas del modelo, existe un nombre relacionado con</span>
+<span class="c1"># cada uno de los parámetros que permiten analizar el sistema; retomando el</span>
+<span class="c1"># formato de salida del ejemplo # 4, a continuación se imprimen las salidas.</span>
+<span class="c1"># Para la impresión se almacenará el objeto de salida en una variable.</span>
+<span class="n">SALIDA</span> <span class="o">&lt;-</span> <span class="nf">summary</span><span class="p">(</span><span class="n">MODELO</span><span class="p">)</span>
+<span class="c1"># A continuación se imprimen una a una las diferentes variables con el propósito</span>
+<span class="c1"># de contrastarlas con el método manual.</span>
+<span class="c1"># 0 Utilización promedio de la caja</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;0 Utilización promedio de la caja:&quot;</span><span class="p">,</span><span class="n">SALIDA</span><span class="o">$</span><span class="n">el[6]</span><span class="p">))</span>
+<span class="c1"># 1 Probabilidad de que no hayan unidades en el sistema o que la unidad no tenga que esperar:</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;1 Probabilidad de que no hayan unidades en el sistema o que la unidad no tenga que esperar:&quot;</span><span class="p">,</span><span class="n">SALIDA</span><span class="o">$</span><span class="n">el[7]</span><span class="p">))</span>
+<span class="c1"># 2 Cantidad promedio de unidades en la línea de espera</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;2 Cantidad promedio de unidades en la línea de espera:&quot;</span><span class="p">,</span><span class="n">SALIDA</span><span class="o">$</span><span class="n">el[8]</span><span class="p">))</span>
+<span class="c1"># 3 Cantidad promedio de unidades en el sistema</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;3 Cantidad promedio de unidades en el sistema:&quot;</span><span class="p">,</span><span class="n">SALIDA</span><span class="o">$</span><span class="n">el[11]</span><span class="p">))</span>
+<span class="c1"># 4 Tiempo promedio que pasa una unidad en la línea de espera</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;4 Tiempo promedio que pasa una unidad en la línea de espera:&quot;</span><span class="p">,</span><span class="n">SALIDA</span><span class="o">$</span><span class="n">el[9]</span><span class="p">))</span>
+<span class="c1"># 5 Tiempo promedio que pasa una unidad en le sistema</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;5 Tiempo promedio que pasa una unidad en le sistema:&quot;</span><span class="p">,</span><span class="n">SALIDA</span><span class="o">$</span><span class="n">el[12]</span><span class="p">))</span>
+<span class="c1"># 6 Probabilidad de que una unidad que llega tenga que esperar en el servicio</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;6 Probabilidad de que una unidad que llega tenga que esperar en el servicio:&quot;</span><span class="p">,</span><span class="n">SALIDA</span><span class="o">$</span><span class="n">el[6]</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  lambda mu c  k  m   RO   P0  Lq   Wq  X L   W Wqq Lqq
+1     30 35 1 NA NA 0.86 0.14 5.1 0.17 30 6 0.2 0.2   7
+[1] &#34;0 Utilización promedio de la caja: 0.857142857142857&#34;
+[1] &#34;1 Probabilidad de que no hayan unidades en el sistema o que la unidad no tenga que esperar: 0.142857142857143&#34;
+[1] &#34;2 Cantidad promedio de unidades en la línea de espera: 5.14285714285714&#34;
+[1] &#34;3 Cantidad promedio de unidades en el sistema: 6&#34;
+[1] &#34;4 Tiempo promedio que pasa una unidad en la línea de espera: 0.171428571428571&#34;
+[1] &#34;5 Tiempo promedio que pasa una unidad en le sistema: 0.2&#34;
+[1] &#34;6 Probabilidad de que una unidad que llega tenga que esperar en el servicio: 0.857142857142857&#34;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;queueing&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Installing package into ‘/usr/local/lib/R/site-library’
+(as ‘lib’ is unspecified)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

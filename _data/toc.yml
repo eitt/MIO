@@ -36,6 +36,7 @@
 - divider: true #Propongo dividir en dos secciones según el enfoque estocástico
 - header: Procesos Estocásticos
 - header: Teoría de Colas
+- url: /tc/intro
 - header: Teoría de Decisiones
 - header: Teoría de Inventarios
 
