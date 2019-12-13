@@ -29,6 +29,12 @@
   - url: /mm/1/01
   - url: /mm/1/02
 - header: Programación Lineal
+- url: /pl/intro
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - url: /pl/1/01
+  - url: /pl/1/02
 - header: Teoría de Redes
 - header: Programación Dinámica
 - header: Problema del Agente Viajero (TSP)
