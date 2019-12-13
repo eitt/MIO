@@ -4,36 +4,50 @@ kernel_name: python3
 kernel_path: content/pl
 has_widgets: false
 title: |-
-  Introducción
+  Programación Lineal
 pagenum: 4
 prev_page:
   url: /mm/1/02.html
 next_page:
   url: /pl/1/01.html
 suffix: .ipynb
-search: de en el la y es jupyter se anaconda r python con una que como para los un usar herramientas libro por uso www datos com gh svg org cmo e ejercicios permite notebook cdigo necesario rpy href src class left io zenodo autores lenguaje unab industrial uis las investigacin aprendizaje automtico modelado aplicacin programacin mediante o lenguajes diferentes ejecutar manera interfaz siguiente circleci bookimg book style codecov badge doi div continuacin presentan caractersticas este qu estas tecnologas empezar utilizar agradecimientos research gate researchgate net profile ingeniera universidad edu co investigador operaciones tcnicas produccin rea desarrollo modelos ecuaciones simulacin mio
+search: de el la en es se un y para que o las una problema lineal con por variables r manera programacin puede x los anaconda python son ser equation ms del pasos usar mquinas uso su xa necesario construir mquina como herramientas d objetivo funcin restricciones decisin diferentes si simplex posible resolver tipo modelo matemtico funciones estas todas forma siguiente begin end n b m valor vez cinco determinar espacio ejemplo ejercicios jupyter permite notebook cdigo rpy mtodo optimizacin solucin al decisiones donde entre estndar dotsa xn decir ello vector conjunto desde cmo estos mediante soluciones enteras contnuas modelado c
 
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
     <main class="jupyter-page">
-    <div id="page-info"><div id="page-title">Introducción</div>
+    <div id="page-info"><div id="page-title">Programación Lineal</div>
 </div>
     <div class="jb_cell">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://circleci.com/gh/jupyter/jupyter-book"><img src="https://circleci.com/gh/jupyter/jupyter-book.svg?style=svg" class="left"></a>
-<a href="https://codecov.io/gh/jupyter/jupyter-book"><img src="https://codecov.io/gh/jupyter/jupyter-book/branch/master/graph/badge.svg" class="left"></a>
-<a href="https://doi.org/10.5281/zenodo.2799972"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.2799972.svg" class="left"></a></p>
-<div style="clear:both;"></div><p>A continuación se presentan algunas características relacionadas con el libro.</p>
-<ul>
-<li>Autores</li>
-<li>¿Cómo usar este libro?</li>
-<li>¿Por qué el uso de estas tecnologías?</li>
-<li>¿Cómo empezar a utilizar ANACONDA y el lenguaje R en Python?</li>
-<li>Agradecimientos</li>
-</ul>
+<p><img src="Simplex-method-3-dimensions.png" width="200" alt="Muestra un pligono de programación lineal junto con una posible ruta (roja) hallada por el método simplex para resolver el problema lineal correspondiente" title="Método Simplex para un sistema en 3D" /></p>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n"> </a></h2><p>La programación lineal es un tipo de modelo matemático especial enfocado en describir un problema de optimización haciendo uso de funciones lineales (líneas para dos variables (2D, o <strong>$R^2$</strong>), planos para tres variables (3D, o <strong>$R^3$</strong>), o hiperplanos para dimensiones superiores (<strong>$R^n$</strong>)). En consecuencia, el término programación se relaciona más con la definición del problema y su solución, mientras el componente lineal hace referencia al tipo de modelos matemáticos, en síntesis, programación lineal es la manera en la cual se realizan actividades, o toman decisiones para lograr un objetivo de manera óptima, donde la relación entre estas actividades o decisiones se da de manera lineal.</p>
+<p>Por tanto, un problema de programación lineal (<em>Linear Programming, LP</em>) es un problema matemático en que todas las funciones matemáticas son lineales en las incógnitas; consta de una función especial denominada <em>Función Objetivo</em>, y un grupo de funciones especiales denominadas <em>Restricciones</em>, las cuales pueden ser de igualdades o desigualdades. Según expone <strong>(CITA)</strong> La forma exacta de estas restricciones puede variar de unos problemas a otros; sin embargo, cualquier programa lineal se puede convertir a la siguiente <em>forma estándar</em>:</p>
+<p><strong>minimizar</strong>
+\begin{equation*}
+c_1x_1+c_2x_2+c_3x_3+...+c_nx_n
+\end{equation*}
+<strong>sujeto a:</strong>
+\begin{equation*}
+a_{11}x_1+a_{12}x_2+a_{13}x3+\dots+a_{1n}x_n=b_1\\
+a_{21}x_1+a_{22}x_2+a_{23}x3+\dots+a_{2n}x_n=b_2\\
+\vdots \\
+a_{m1}x_1+a_{m2}x_2+a_{m3}x3+\dots+a_{mn}x_n=b_m\\
+\end{equation*}</p>
+<p>donde $b_i$, $c_i$ y $a_{ij}$ son constantes reales fijas, y las $x_i$ son las variables del problema, es decir, se desea hallar el valor de las distintas $x_i$ de manera tal que se halle el óptimo del problema. En su forma estándar, se busca que se cumpla la restricción $b_i &gt;= 0$, para ello de manera independiente cada restricción puede ser multiplicada por menos uno $(-1)$. Teniendo en cuenta que a medida que se definan más restricciones, o se describe el problema con más variables, su notación aumenta significativamente se acostumbra de escribir la forma estándar de manera vectorial, su expresión se muestra a continuación:
+<strong>minimizar
+\begin{equation*}
+c^Tx
+\end{equation*}</strong>
+<strong>sujeto a:
+\begin{equation*}
+Ax=b, \ x&gt;=0
+\end{equation*}</strong></p>
+<p>donde <strong>$x$</strong> es un vector columna con tamaño $n$, <strong>$c^T$</strong> es un vector fila <em>n-dimensional</em>, <strong>$A$</strong> es una matriz de dimensiones $mxn$, y <strong>$b$</strong> es un vector columna de dimensión $m$. Además, el conjunto de restricciones <strong>$x&gt;=0$</strong> quiere decir que todas las variables de decisión son positivas.</p>
+<p>Una vez definido el problema de optimización lineal, es necesario asiganar el valor a las difernetes <strong>$x$</strong> de manera tal que satisfagan todas las restricciones, a la par de obtener el máximo o mínimo valor posible de la función objetivo. Esta asignación no puede ser arbitraria y, para ello, en el presente capítulo se mostrán algunos métodos comenzando desde el más sencillo (método gráfico) que puede ser visualizado en 2D, hasta el simplex y algunas variantes.</p>
 
 </div>
 </div>
@@ -44,16 +58,18 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Autores">Autores<a class="anchor-link" href="#Autores"> </a></h2><p>A continuación se presentan los autores según orden alfabético de los apellidos.</p>
-<p><strong>Camacho-Pinto, Julio C. <a href="https://www.researchgate.net/profile/Julio_Camacho6/">Research Gate</a></strong></p>
-<p><strong>Talero-Sarmiento, Leonardo H. <a href="https://www.researchgate.net/profile/Leonardo_Talero/">Research Gate</a></strong></p>
-<p>Actualmente es estudiante de Doctorado en Ingeniería en la <a href="https://www.unab.edu.co/">Universidad Autónoma de Bucaramanga, UNAB</a>, Magíster en Ingeniería Industrial, e Ingeniero Industrial de la <a href="https://www.uis.edu.co/">Universidad Industrial de Santander, UIS</a>; se desempeña como Profesor e Investigador en la <strong>UIS</strong> y <strong>UNAB</strong>; como docente en las áreas de Investigación de Operaciones, Diseño de Experimentos, Aplciación de técnicas de aprendizaje automático, e investigador en analítica de datos, y producción. Su experiencia se centra en:</p>
+<h2 id="&#191;C&#243;mo-resolver-un-problema-de-programaci&#243;n-lineal?">&#191;C&#243;mo resolver un problema de programaci&#243;n lineal?<a class="anchor-link" href="#&#191;C&#243;mo-resolver-un-problema-de-programaci&#243;n-lineal?"> </a></h2><p>De manera general, todos los problemas de optimización pueden ser estructurados en cinco pasos, estos parten desde la descripción del problema o situación a mejorar, su descripción mediante funciones matemáticas, el hallazgo de posibles soluciones y la selección de una solución final, que puede ser óptima o no dependiendo del problema. Los cinco pasos se muestran a continuación.</p>
 <ol>
-<li>Modelado de series estocásticas y validación de pruebas de hipótesis en Finanzas.</li>
-<li>Aplicación de programación matemática multiobjetivo, multiperiodo con integración de metaheurísticas en el área de Producción.</li>
-<li>Desarrollo de modelos de ecuaciones estructurales y análisis de datos en el área de Administración.</li>
-<li>Participación en el sector Industria como Consultor y Analista de procesos mediante la generación de modelos matemáticos y de simulación. </li>
+<li>Definir las variables de decisión</li>
+<li>Construir la función objetivo</li>
+<li>Determinar el criterio de decisión</li>
+<li>Construir el espacio de búsqueda</li>
+<li>Construir el espacio de soluciones</li>
 </ol>
+<h3 id="Definir-las-variables-de-decisi&#243;n">Definir las variables de decisi&#243;n<a class="anchor-link" href="#Definir-las-variables-de-decisi&#243;n"> </a></h3><p>Es fundamental una vez descrito el problema a solucionar determinar el tipo de variables. Según las variables a usar (binarias, enteras, y/o contínuas <a href="/mm/1/01">(Ver la sección de modelado matemático)</a>), es necesario aplicar diferentes métodos de solución, además, dependiendo del fenómeno a modelar algunas variables son más prácticas. Por ejemplo, se acostumbra a utilziar variables binarias para representar las diferentes asignaciones, a modo de ejemplo, la variable $x{o,c}$ toma el valor de 1 si al operario Pedro trabaja se le asigna la máquina 4. En este caso $x{o,c}$ es una matriz que combina todos los posibles operarios (supongamos cinco: ${Alonso, Beatriz, Carmen, Diego, Efren}$), con todas las máquinas disponibles, a modo de ejmplo consideremos cuatro máquinas:  ${máquina_1, máquina_2, máquina_3, máquina_4}$, por tanto, $x_{o,c}$ es un conjunto de 20 varaibles.</p>
+<p>En cuanto a las varaibles enteras y contínuas, estas son afines en su uso y sú implicación práctica para modelar es si la cantidad puede ser fraccionada o no. Por ejemplo, se puede suponer que se desea determinar la cantidad necesaria de impresoras 3D requeridas para fabricar unos repuestos. Si estoy considerando en comprar las máquinas lo más recomendado es usar varaibles enteras ya que no puedo comprar máquinas a medias; por otro lado, si el problema implica el alquiler de máquinas y este pueda alquilarse por tiempo parcial, es recomendado trabajar con variables contínuas ya que puedo alquilar 5.5 máquinas, es decir, cinco máquinas tiempo completo y una máquina a medio tiempo.</p>
+<h3 id="Construir-la-funci&#243;n-objetivo">Construir la funci&#243;n objetivo<a class="anchor-link" href="#Construir-la-funci&#243;n-objetivo"> </a></h3><h3 id="Determinar-el-criterio-de-decisi&#243;n">Determinar el criterio de decisi&#243;n<a class="anchor-link" href="#Determinar-el-criterio-de-decisi&#243;n"> </a></h3><h3 id="Construir-el-espacio-de-b&#250;squeda">Construir el espacio de b&#250;squeda<a class="anchor-link" href="#Construir-el-espacio-de-b&#250;squeda"> </a></h3><h3 id="Construir-el-espacio-de-soluciones">Construir el espacio de soluciones<a class="anchor-link" href="#Construir-el-espacio-de-soluciones"> </a></h3><p>Como conclusión, estos son los pasos requeridos para solucionar un problema de programación lineal:</p>
+<p><img src="Pasos para hacer un Modelo.png"  alt="Pasos para hacer un modelo lineal" title="Pasos para hacer un modelo lineal" /></p>
 
 </div>
 </div>
