@@ -26,8 +26,8 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "http://localhost:4000/pl/intro.html",
   "headline": "Programación Lineal",
-  "datePublished": "2019-12-13T10:49:37-05:00",
-  "dateModified": "2019-12-13T10:49:37-05:00",
+  "datePublished": "2019-12-14T10:48:03-05:00",
+  "dateModified": "2019-12-14T10:48:03-05:00",
   "description": "        Programación Lineal    Introducci&#243;n La programación lineal es un tipo de modelo matemático especial enfocado en describir un problema de optimiz...",
   "author": {
     "@type": "Person",
@@ -1183,7 +1183,7 @@ initFunction(initPrint)
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="Simplex-method-3-dimensions.png" width="200" alt="Muestra un pligono de programación lineal junto con una posible ruta (roja) hallada por el método simplex para resolver el problema lineal correspondiente" title="Método Simplex para un sistema en 3D" /></p>
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n"> </a></h2><p>La programación lineal es un tipo de modelo matemático especial enfocado en describir un problema de optimización haciendo uso de funciones lineales (líneas para dos variables (2D, o <strong>$R^2$</strong>), planos para tres variables (3D, o <strong>$R^3$</strong>), o hiperplanos para dimensiones superiores (<strong>$R^n$</strong>)). En consecuencia, el término programación se relaciona más con la definición del problema y su solución, mientras el componente lineal hace referencia al tipo de modelos matemáticos, en síntesis, programación lineal es la manera en la cual se realizan actividades, o toman decisiones para lograr un objetivo de manera óptima, donde la relación entre estas actividades o decisiones se da de manera lineal.</p>
-<p>Por tanto, un problema de programación lineal (<em>Linear Programming, LP</em>) es un problema matemático en que todas las funciones matemáticas son lineales en las incógnitas; consta de una función especial denominada <em>Función Objetivo</em>, y un grupo de funciones especiales denominadas <em>Restricciones</em>, las cuales pueden ser de igualdades o desigualdades. Según expone <strong>(CITA)</strong> La forma exacta de estas restricciones puede variar de unos problemas a otros; sin embargo, cualquier programa lineal se puede convertir a la siguiente <em>forma estándar</em>:</p>
+<p>Por tanto, un problema de programación lineal (<em>Linear Programming, LP</em>) es un problema matemático en que todas las funciones matemáticas son lineales en las incógnitas; consta de una función especial denominada <em>Función Objetivo, FO</em>, y un grupo de funciones especiales denominadas <em>Restricciones</em>, las cuales pueden ser de igualdades o desigualdades. Según expone <strong>(CITA)</strong> La forma exacta de estas restricciones puede variar de unos problemas a otros; sin embargo, cualquier programa lineal se puede convertir a la siguiente <em>forma estándar</em>:</p>
 <p><strong>minimizar</strong>
 \begin{equation*}
 c_1x_1+c_2x_2+c_3x_3+...+c_nx_n
@@ -1195,8 +1195,8 @@ a_{21}x_1+a_{22}x_2+a_{23}x3+\dots+a_{2n}x_n=b_2\\
 \vdots \\
 a_{m1}x_1+a_{m2}x_2+a_{m3}x3+\dots+a_{mn}x_n=b_m\\
 \end{equation*}</p>
-<p>donde $b_i$, $c_i$ y $a_{ij}$ son constantes reales fijas, y las $x_i$ son las variables del problema, es decir, se desea hallar el valor de las distintas $x_i$ de manera tal que se halle el óptimo del problema. En su forma estándar, se busca que se cumpla la restricción $b_i &gt;= 0$, para ello de manera independiente cada restricción puede ser multiplicada por menos uno $(-1)$. Teniendo en cuenta que a medida que se definan más restricciones, o se describe el problema con más variables, su notación aumenta significativamente se acostumbra de escribir la forma estándar de manera vectorial, su expresión se muestra a continuación:
-<strong>minimizar
+<p>donde $b_i$, $c_i$ y $a_{ij}$ son constantes reales fijas, y las $x_i$ son las variables del problema, es decir, se desea asignar el valor de las distintas $x_i$ de manera tal que se halle el óptimo del problema. En su forma estándar, se busca que se cumpla la restricción $b_i &gt;= 0$, para ello de manera independiente cada restricción puede ser multiplicada por menos uno $(-1)$. Teniendo en cuenta que a medida que se definan más restricciones, o se describe el problema con más variables, su notación aumenta significativamente, se acostumbra de escribir la forma estándar de manera vectorial. Su expresión se muestra a continuación:</p>
+<p><strong>minimizar
 \begin{equation*}
 c^Tx
 \end{equation*}</strong>
@@ -1205,7 +1205,7 @@ c^Tx
 Ax=b, \ x&gt;=0
 \end{equation*}</strong></p>
 <p>donde <strong>$x$</strong> es un vector columna con tamaño $n$, <strong>$c^T$</strong> es un vector fila <em>n-dimensional</em>, <strong>$A$</strong> es una matriz de dimensiones $mxn$, y <strong>$b$</strong> es un vector columna de dimensión $m$. Además, el conjunto de restricciones <strong>$x&gt;=0$</strong> quiere decir que todas las variables de decisión son positivas.</p>
-<p>Una vez definido el problema de optimización lineal, es necesario asiganar el valor a las difernetes <strong>$x$</strong> de manera tal que satisfagan todas las restricciones, a la par de obtener el máximo o mínimo valor posible de la función objetivo. Esta asignación no puede ser arbitraria y, para ello, en el presente capítulo se mostrán algunos métodos comenzando desde el más sencillo (método gráfico) que puede ser visualizado en 2D, hasta el simplex y algunas variantes.</p>
+<p>Una vez definido el problema de optimización lineal, es necesario asiganar el valor a las diferentes <strong>$x$</strong> de manera tal que satisfagan todas las restricciones, a la par de obtener el máximo o mínimo valor posible de la función objetivo. Esta asignación no puede ser arbitraria y, para ello, en el presente capítulo se mostrán algunos métodos comenzando desde el más sencillo (método gráfico) que puede ser visualizado en 2D, hasta el simplex y algunas variantes.</p>
 
 </div>
 </div>
@@ -1216,7 +1216,7 @@ Ax=b, \ x&gt;=0
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#191;C&#243;mo-resolver-un-problema-de-programaci&#243;n-lineal?">&#191;C&#243;mo resolver un problema de programaci&#243;n lineal?<a class="anchor-link" href="#&#191;C&#243;mo-resolver-un-problema-de-programaci&#243;n-lineal?"> </a></h2><p>De manera general, todos los problemas de optimización pueden ser estructurados en cinco pasos, estos parten desde la descripción del problema o situación a mejorar, su descripción mediante funciones matemáticas, el hallazgo de posibles soluciones y la selección de una solución final, que puede ser óptima o no dependiendo del problema. Los cinco pasos se muestran a continuación.</p>
+<h2 id="&#191;C&#243;mo-resolver-un-problema-de-programaci&#243;n-lineal?">&#191;C&#243;mo resolver un problema de programaci&#243;n lineal?<a class="anchor-link" href="#&#191;C&#243;mo-resolver-un-problema-de-programaci&#243;n-lineal?"> </a></h2><p>De manera general, todos los problemas de optimización pueden ser estructurados en cinco pasos, estos parten desde la delimitación del problema o situación a mejorar, su descripción mediante funciones matemáticas, el hallazgo de posibles soluciones y la selección de una solución final, que puede ser óptima o no dependiendo del problema. Los cinco pasos se muestran a continuación.</p>
 <ol>
 <li>Definir las variables de decisión</li>
 <li>Construir la función objetivo</li>
@@ -1224,71 +1224,69 @@ Ax=b, \ x&gt;=0
 <li>Construir el espacio de búsqueda</li>
 <li>Construir el espacio de soluciones</li>
 </ol>
-<h3 id="Definir-las-variables-de-decisi&#243;n">Definir las variables de decisi&#243;n<a class="anchor-link" href="#Definir-las-variables-de-decisi&#243;n"> </a></h3><p>Es fundamental una vez descrito el problema a solucionar determinar el tipo de variables. Según las variables a usar (binarias, enteras, y/o contínuas <a href="/mm/1/01">(Ver la sección de modelado matemático)</a>), es necesario aplicar diferentes métodos de solución, además, dependiendo del fenómeno a modelar algunas variables son más prácticas. Por ejemplo, se acostumbra a utilziar variables binarias para representar las diferentes asignaciones, a modo de ejemplo, la variable $x{o,c}$ toma el valor de 1 si al operario Pedro trabaja se le asigna la máquina 4. En este caso $x{o,c}$ es una matriz que combina todos los posibles operarios (supongamos cinco: ${Alonso, Beatriz, Carmen, Diego, Efren}$), con todas las máquinas disponibles, a modo de ejmplo consideremos cuatro máquinas:  ${máquina_1, máquina_2, máquina_3, máquina_4}$, por tanto, $x_{o,c}$ es un conjunto de 20 varaibles.</p>
-<p>En cuanto a las varaibles enteras y contínuas, estas son afines en su uso y sú implicación práctica para modelar es si la cantidad puede ser fraccionada o no. Por ejemplo, se puede suponer que se desea determinar la cantidad necesaria de impresoras 3D requeridas para fabricar unos repuestos. Si estoy considerando en comprar las máquinas lo más recomendado es usar varaibles enteras ya que no puedo comprar máquinas a medias; por otro lado, si el problema implica el alquiler de máquinas y este pueda alquilarse por tiempo parcial, es recomendado trabajar con variables contínuas ya que puedo alquilar 5.5 máquinas, es decir, cinco máquinas tiempo completo y una máquina a medio tiempo.</p>
-<h3 id="Construir-la-funci&#243;n-objetivo">Construir la funci&#243;n objetivo<a class="anchor-link" href="#Construir-la-funci&#243;n-objetivo"> </a></h3><h3 id="Determinar-el-criterio-de-decisi&#243;n">Determinar el criterio de decisi&#243;n<a class="anchor-link" href="#Determinar-el-criterio-de-decisi&#243;n"> </a></h3><h3 id="Construir-el-espacio-de-b&#250;squeda">Construir el espacio de b&#250;squeda<a class="anchor-link" href="#Construir-el-espacio-de-b&#250;squeda"> </a></h3><h3 id="Construir-el-espacio-de-soluciones">Construir el espacio de soluciones<a class="anchor-link" href="#Construir-el-espacio-de-soluciones"> </a></h3><p>Como conclusión, estos son los pasos requeridos para solucionar un problema de programación lineal:</p>
+<h3 id="Definir-las-variables-de-decisi&#243;n">Definir las variables de decisi&#243;n<a class="anchor-link" href="#Definir-las-variables-de-decisi&#243;n"> </a></h3><p>Es fundamental una vez descrito el problema a solucionar determinar el tipo de variables. Según las variables a usar (binarias, enteras, y/o contínuas <a href="/mm/1/01">(Ver la sección de modelado matemático)</a>), es necesario aplicar diferentes métodos de solución, además, dependiendo del fenómeno a modelar algunas variables son más prácticas. Por ejemplo, se acostumbra a utilizar variables binarias para representar las diferentes asignaciones, a modo de ejemplo, la variable $x_{o,m}$ toma el valor de 1 si al operario Pedro trabaja o es asignado a la máquina 4. En este caso $x_{o,m}$ es una matriz que combina todos los posibles operarios (supongamos cinco: $\{Alonso, Beatriz, Carmen, Diego, Efren\}$), con todas las máquinas disponibles, a modo de ejemplo consideremos cuatro máquinas:  $\{m_1, m_2, m_3, m_4\}$, por tanto, $x_{o,m}$ es un conjunto de 20 variables.</p>
+<p>En cuanto a las varaibles enteras y contínuas, estas son afines en su uso y sú implicación práctica para modelar es si la cantidad puede ser fraccionada o no. Por ejemplo, se puede suponer que se desea determinar la cantidad necesaria de impresoras 3D requeridas para fabricar unos repuestos. Si se considera comprar las máquinas, lo más recomendado es usar variables enteras ya que no puedo comprar máquinas a medias; por otro lado, si el problema implica el alquiler de máquinas y estas puedan alquilarse por tiempo parcial, es recomendado trabajar con variables contínuas ya que puedo alquilar 5.5 máquinas, es decir, cinco máquinas tiempo completo y una máquina a medio tiempo.</p>
+<p>Una vez definidas las variables se debe tener presente sus unidades y cómo estás pueden variar en cantidad, tiempo o proporción. En cuanto a la cantidad, ésta va de la mano con el tipo de variable; respecto al tiempo, es importante tener presente si la variable abarca todo el horizonte de planeación o, si esta cambia según el periodo. Retomando el ejemplo de la variable $x_{o,m}$, ésta no parece indicar que cambie en el tiempo, es decir, Pedro trabajará en la máquina 4 durante el periodo completo, por el contrario, si se está asignando el operario a la máquina teniendo en cuenta la demanda mensual y se desea hacer una programación anual,  problemente es necesario redefinir la variable con otro índice: $x_{o,m,t}$, donde $t$ es el periodo de tiempo que dura la asignación, para este ejemplo, doce meses. Por tanto, $x_{o,m,t}$ es un conjunto de 240 variables de decisión $cantidad=5*4*12=240$.</p>
+<p>En cuanto a la proporción, al ser varaibles lineales su cambio tendrá un impacto, por ejemplo, si no es lo mismo que Pedro trabaje en la máquina 4 que en la máquina 1 debido a que él es más proficiente con la máquina 4 que con la 1, entonces si estoy analizando el tiempo que se demora en cáda máquina se espera que sea mayor en la máquina 1 que en la máquina 4, por el contrario, si se está analizando el desperdicio derivado de la operación, se espera que sea menor en la máquina 4 que en la 1. Teniendo esto presente, se debe verificar cómo el cambio en el valor de cada variable de decisión puede afectar elementos como los costos, ingresos, satisfacción, demanda, requerimientos y demás, elementos que serán abordados más adelante.</p>
+<h3 id="Construir-la-funci&#243;n-objetivo">Construir la funci&#243;n objetivo<a class="anchor-link" href="#Construir-la-funci&#243;n-objetivo"> </a></h3><p>Una vez definidas las variables es necesario determinar su impacto en una métrica de calidad, es decir, una vez tomo una decisión ésta genera un impacto en un objetivo de interés. Si se está produciendo implantes impresos en 3D, tal vez el enfoque se relacione con consumo de material, costos de energía, valor de la mano de obra, ingresos, impacto ambiental, y así sucesivamente. De manera general, los objetivos en <em>PL</em> se pueden agrupar en dos grandes categorías: el primero, objetivos de maximizar, esta categoría abarca situaciones como ingresos, utilidad, satisfacción, felicidad, redimientos, eficiencia, es decir, todos los escenarios donde se desea aumentar el valor resultante; en contra parte, el segundo son los objetivos de minimizar, éstos contienen situaciones como costos, dolor, movimientos, desperdicios, deserción y demás; son todas esas situaciones donde se busca disminuir el valor.</p>
+<p>Teniendo en cuenta el tipo de variables y la información disponible, se asigna un peso a cada variable; este peso indica cómo impacta la decisión en la función objetivo. Ejemplificando, si se está comprando insumo plástico para una impresora 3D, y seespera consumir entre 100 kilogramos a 500 kilogramos, donde la variable $x_{inv}$, es la cantidad de inventario que se espera comprar, se puede hallar un costo asociado a la compra, por ejemplo, suponer que cada kilogramo de material plástico cuenta 1000, por tanto, en la función objetivo debe aparecer dentro de la suma de costos dicho peso: $FO=1000x_{inv}$.</p>
+<p>En añadidura, si se está considenrando comprar el material por cada unidad de tiempo durante los doce meses, es espera halla un subíndice extra relacionado con el periodo: $x_{inv,t}$, que indicaría la cantidad de material comprado durante el periodo $t$, en consecuencia, dentro de la función objetivo se espera encontrar todos esos costos asociados:</p>
+\begin{equation*}
+FO=1000x_{inv,1}+1000x_{inv,2},\dots,1000x_{inv,12}
+\end{equation*}<p>Cabe resaltar que al ser costos constantes, es posible reescribir la función factorizando:</p>
+\begin{equation*}
+FO=1000(x_{inv,1}+x_{inv,2},\dots,x_{inv,12})
+\end{equation*}<p>Sin embargo, si los costos cambian según cada periodo (por ejemplo los <em>black friday</em> u eventos similares), no sería posible factorizar y, por tanto, suponiendo costos entre 1000 y 1500, se obtendría la sigueinte función:</p>
+\begin{equation*}
+FO=1500x_{inv,1}+1115x_{inv,2},\dots,1300x_{inv,12}
+\end{equation*}<p>Con el propósito de hacer más compacta la notación, se suele describir los costos como conjuntos que pueden ser vectores o matrices según la cantidad de índices que tenga la variable que están premultiplicando. en este ejemplo, es posible definir un costo $c$ relacionado con el inventario en el tiempo, es decir, $c_{inv,t}$. Teniendo en cuenta lo anterior, y sabiendo que $c_{inv,t}$ puede ser un vector con los siguientes valores:</p>
+<p>$c_{inv,t}=\{1500,1115,1235,1224,1469,1000,1500,1450,1369,1232,1187,1300\}$</p>
+<p>Por tanto, la función objetivo puede expresarse de la siguiente manera:</p>
+\begin{equation*}
+FO=c_{inv,1}x_{inv,1}+c_{inv,2}x_{inv,2},\dots,c_{inv,12}x_{inv,12}
+\end{equation*}<p>Dicha estructura lineal crece a la medida que se consideran más variables o nuevos índices, por consiguiente, con el fin de facilitar la escritura se suele condensar mediante el operador de sumatoria como se muestra a continuación.</p>
+\begin{equation*}
+FO=\sum_{t=1}^{12} c_{inv,t}x_{inv,t}
+\end{equation*}<p>No obstante, teniendo en cuenta que se tienen dos vectores de igual tamaño, uno asociado a los costos y otro relacionado con las variables de decisión. Otra manera de exponer la función objetivo es como el producto punto entre ambos vectores:</p>
+\begin{equation*}
+FO=c_{inv,t}.x_{inv,t}
+\end{equation*}<p>Para finalizar, si bien se ha ejemplificado la construcción de la función objetivo con un caso de costos, el procedimiento es el mismo para los casos de beneficios. En consecuencia, se acostumbra a llamar carga al valor que multiplica dada variable de decisión con el fin de que contemple los escenarios donde aumentar o asignar un valor a la variable impacte tanto positiva como negativamente la FO.</p>
+<h3 id="Determinar-el-criterio-de-decisi&#243;n">Determinar el criterio de decisi&#243;n<a class="anchor-link" href="#Determinar-el-criterio-de-decisi&#243;n"> </a></h3><p>De manera paralela a la construcción de la función objetivo se determina el criterio de decisión, éste se agrupa en dos categorías que van de la mano con los grupos de funciones objetivo: Máximizar, es decir, asignar valores a las variables de decisión de tal forma que se encuentre el mayor valor posible, este criterio se aplica para la categoría de maximizar. En contra parte, está el criterio de minimizar que busca el mínimo valor posible de FO.</p>
+<h3 id="Construir-el-espacio-de-b&#250;squeda">Construir el espacio de b&#250;squeda<a class="anchor-link" href="#Construir-el-espacio-de-b&#250;squeda"> </a></h3><p>El espacio de búsqueda es el conjunto de todos los posibles valores que pueden tomar las variables de decisión. Es necesario indicar que comunmente existen restricciones que se deben cumplir y éstas acotan dicho espacio. Retomando el ejemplo de x<em>{inv,t}, existe la posibilidad que la cantidad de material que se compre durante cada mes no deba superar la capacidad de almacenamiento, por tanto, el valor de x</em>{inv,t} no puede superar la capacidad en el instante $t$. Si se supone que se cuenta con una capacidad variable entre una y dos toneladas por mes, a modo de ejemplo se puede tener el siguiente sigueinte vector de capacidades de almacenamiento $cap=\{1,1,2,1,1,1,2,1,1,1,2,2\} [ton]$, en consecuencia se tienen las siguientes doce restricciones asociadas a no comprar más inventario del que se pueda almacenar por mes:</p>
+\begin{equation*}
+r1:x_{inv,1}&lt;=1\\
+r2:x_{inv,2}&lt;=1\\
+r3:x_{inv,3}&lt;=2\\
+r4:x_{inv,4}&lt;=1\\
+r5:x_{inv,5}&lt;=1\\
+r6:x_{inv,6}&lt;=1\\
+r7:x_{inv,7}&lt;=2\\
+r8:x_{inv,8}&lt;=1\\
+r9:x_{inv,9}&lt;=1\\
+r10:x_{inv,10}&lt;=1\\
+r11:x_{inv,11}&lt;=2\\
+r12:x_{inv,12}&lt;=2
+\end{equation*}<p>Además, existen situaciones en las cuales la suma de varias variables deben cumplir con ciertas restricciones. Por ejemplo, se suponga que la cantidad total de inventario por año no debe superar las trece toneladas, ni ser menor a ocho toneladas. Dicha información genera dos nuevas restricciones:</p>
+\begin{equation*}
+r13:\sum_{t=1}^{12} x_{inv,t}&lt;=13 \\
+r14:\sum_{t=1}^{12} x_{inv,t}&gt;=8
+\end{equation*}<p>Así mismo, existen escenarios donde se contemplan de manera simultánea varias variables pero no en su totalidad, suponga ahora que durante los primeros tres meses la cantidad comprada debe ser inferior a seis toneladas. La nueva restricción será:</p>
+\begin{equation*}
+r15:x_{inv,1}+x_{inv,2}+x_{inv,3}&lt;=6
+\end{equation*}<p><a class="citation" href="#holdgraf_evidence_2014">(Holdgraf, de Heer, Pasley, &amp; Knight, 2014; Flanagan &amp; Matsumoto, 2008)</a></p>
+<h3 id="Construir-el-espacio-de-soluciones">Construir el espacio de soluciones<a class="anchor-link" href="#Construir-el-espacio-de-soluciones"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Como conclusión, estos son los pasos requeridos para solucionar un problema de programación lineal:</p>
 <p><img src="Pasos para hacer un Modelo.png"  alt="Pasos para hacer un modelo lineal" title="Pasos para hacer un modelo lineal" /></p>
 
-</div>
-</div>
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#191;C&#243;mo-usar-este-libro?">&#191;C&#243;mo usar este libro?<a class="anchor-link" href="#&#191;C&#243;mo-usar-este-libro?"> </a></h2><p>MIO es un libro práctico enfocado a la investigación Operativa, posee las características de manual o <em>handbook</em> con la particularidad de desarrollar y resolver ejercicios en el lenguaje de programación <strong>R</strong>. Está dividido por capítulos relacionados con estrategias de modelado matemático para la toma de decisiones, en cada uno de éstos se encuentran explicaciones teóricas, ejercicios resueltos y propuestos, así como la presentación y explicación de herramientas de base tecnológica (particularmente paquetes).</p>
-<p>El libro puede ser usado por profesores como una guía para la creación de ejercicios básicos a usar de ejemplo en los contenidos curriculares asociados a materias como Investigación de Operaciones. En el caso de estudiantes, sirver como material de estudio y se enfoca principalmente en reforzar el uso de la herramienta <strong>R</strong>.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#191;Por-qu&#233;-el-uso-de-estas-tecnolog&#237;as?">&#191;Por qu&#233; el uso de estas tecnolog&#237;as?<a class="anchor-link" href="#&#191;Por-qu&#233;-el-uso-de-estas-tecnolog&#237;as?"> </a></h2><p>La estructura del MIO se basa en la implementación de contenidos programaticos utilizando Notebooks, éstos son unas herramientas muy útiles para resolver ejercicios utilizando lenguajes de programación de alto nivel, en conjunto con herramientas visuales. Para el uso de Notebooks se propone trabajar con Jupyter que es una herrameinta contenida en ANACONDA. <a href="https://www.anaconda.com/">ANACONDA</a> es una paltaforma que permite el uso dele lenguale Python, con un enfoque particular en el análsis o ciencia de datos, aprendizaje automático y aplicación de técnicas de inteligencia artificial. ANACONDA permite el trabajo colaborativo con la facilidad de integrar diferentes lenguajes de programaciçon a partir de la instalación de kernels. Entre las diferentes herramientas se encuentra <a href="https://jupyter.org/">Jupyter Notebook</a>, que es una aplicación web de código abierto que permite crear y compartir documentos que contienen código interactivo, ecuaciones escritas en LaTeX, visualizar herramientas desarrolladas en JavaScript, e insertar texto narrativo o descriptivo. Mediante los Notebboks de Jupyter es posible ejecutar una limpieza y transformación de datos, simulación numérica, modelado estadístico, visualización de datos, aprendizaje automático, entre otras cosas más.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#191;C&#243;mo-empezar-a-utilizar-ANACONDA-y-el-lenguaje-R-en-Python?">&#191;C&#243;mo empezar a utilizar ANACONDA y el lenguaje R en Python?<a class="anchor-link" href="#&#191;C&#243;mo-empezar-a-utilizar-ANACONDA-y-el-lenguaje-R-en-Python?"> </a></h2><h3 id="Usar-R-en-un-Notebook-de-Python">Usar R en un Notebook de Python<a class="anchor-link" href="#Usar-R-en-un-Notebook-de-Python"> </a></h3><p>Para poder aprovechar la incorporación de herramientas dinámicas en un Notebook de Python y, de manera simultánea usar R, hay diferentes opciones. Si el interés es trabajar de manera simultánea los dos lenguajes es necesario instalar <a href="https://pypi.org/project/rpy2/">rpy2</a>, el cual es un proyecto que permite generar una interfaz de R en Python. Para instalarlo es necesario abrir el cuadro de comandos de ANACONDA (<em>anaconda prompt</em>), y ejecutar el siguiente comando.</p>
-<div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">rpy2</span>
-</pre></div>
-<p>Una vez instalado, es posible usar la interfaz de R mediante la ejecución de una celda tipo mágica (<a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">magics cells</a>); sin embargo, es necesario ejecutar por una sola vez el siguiente código en alguna celda.</p>
-<div class="highlight"><pre><span></span><span class="o">%</span><span class="n">load_ext</span> <span class="n">rpy2</span><span class="o">.</span><span class="n">ipython</span>
-</pre></div>
-<p>Ahora bien, es necesario resaltar que se recomienda cargar primero el paquete de pandas de python usando el siguiente código:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pn</span>
-</pre></div>
-<p>La otra manera es creando directamente un Notebook con un kernel que soporte R. Para ello se puede cargar el kernel desde ANACONDA Navigator siguiendo estos pasos:</p>
-<ol>
-<li>Abrir ANACONDA Navigator.</li>
-<li>Dar clic en la sección de <strong>Enviroments</strong> (Menú vertial al lado izquierdo de la pantalla).</li>
-<li>Dar clic en la opción <strong>Create</strong> (Menú horizontal en la parte inferior de la pantalla).</li>
-<li>Seleccionar R, y aceptar los cambios.</li>
-</ol>
-<p>No obstante, el presente manual está diseñado para que los códigos funcionan en otra interfaz de desarrollo como <a href="https://rstudio.com/">RStudio</a>.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Agradecimientos">Agradecimientos<a class="anchor-link" href="#Agradecimientos"> </a></h2>
 </div>
 </div>
 </div>
