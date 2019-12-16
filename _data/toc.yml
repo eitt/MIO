@@ -33,8 +33,7 @@
   not_numbered: true
   expand_sections: true
   sections:
-  - url: /pl/1/01
-  - url: /pl/1/02
+  - url: /pl/mg/1
 - header: Teoría de Redes
 - header: Programación Dinámica
 - header: Problema del Agente Viajero (TSP)

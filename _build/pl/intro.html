@@ -9,9 +9,9 @@ pagenum: 4
 prev_page:
   url: /mm/1/02.html
 next_page:
-  url: /pl/1/01.html
+  url: /pl/mg/1.html
 suffix: .ipynb
-search: de la el se en que x inv es un y equation por variables o las con para t los una r si lineal problema objetivo funcin ser puede m decisin manera begin end valor ejemplo variable ms mquina cantidad costos fo tiempo programacin su donde son restricciones c tanto decir como posible d del cada cuenta mquinas dos al pueden xa teniendo vez pasos construir espacio periodo est tipo funciones entre todas segn forma vector necesario todos determinar criterio este comprar debe durante hacer espera material simplex modelo consecuencia estas minimizar n b desea tal conjunto presente cmo cinco
+search: de la el x inv en se que es variables un las y equation con una por para o r los t restricciones begin end decisin funcin ser lineal problema objetivo m ejemplo manera si puede valor posible ms donde fo variable cantidad b espacio mquina como costos programacin d su entre son cuenta tiempo del solucin tanto todas decir teniendo vector soluciones c pueden cada conjunto vez dots dos al posibles bsqueda mquinas forma xa n vdots pasos construir lo periodo est bmatrix simplex muestra tipo funciones segn columna necesario esta todos determinar criterio modo este comprar debe durante
 
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -25,7 +25,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="Simplex-method-3-dimensions.png" width="200" alt="Muestra un pligono de programación lineal junto con una posible ruta (roja) hallada por el método simplex para resolver el problema lineal correspondiente" title="Método Simplex para un sistema en 3D" /></p>
 <h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n"> </a></h2><p>La programación lineal es un tipo de modelo matemático especial enfocado en describir un problema de optimización haciendo uso de funciones lineales (líneas para dos variables (2D, o <strong>$R^2$</strong>), planos para tres variables (3D, o <strong>$R^3$</strong>), o hiperplanos para dimensiones superiores (<strong>$R^n$</strong>)). En consecuencia, el término programación se relaciona más con la definición del problema y su solución, mientras el componente lineal hace referencia al tipo de modelos matemáticos, en síntesis, programación lineal es la manera en la cual se realizan actividades, o toman decisiones para lograr un objetivo de manera óptima, donde la relación entre estas actividades o decisiones se da de manera lineal.</p>
-<p>Por tanto, un problema de programación lineal (<em>Linear Programming, LP</em>) es un problema matemático en que todas las funciones matemáticas son lineales en las incógnitas; consta de una función especial denominada <em>Función Objetivo, FO</em>, y un grupo de funciones especiales denominadas <em>Restricciones</em>, las cuales pueden ser de igualdades o desigualdades. Según expone <strong>(CITA)</strong> La forma exacta de estas restricciones puede variar de unos problemas a otros; sin embargo, cualquier programa lineal se puede convertir a la siguiente <em>forma estándar</em>:</p>
+<p>Por tanto, un problema de programación lineal (<em>Linear Programming, LP</em>) es un problema matemático en que todas las funciones matemáticas son lineales en las incógnitas; consta de una función especial denominada <em>Función Objetivo, FO</em>, y un grupo de funciones especiales denominadas <em>Restricciones</em>, las cuales pueden ser de igualdades o desigualdades. Según expone Luenberger, la forma exacta de estas restricciones puede variar de unos problemas a otros; sin embargo, cualquier programa lineal se puede convertir a la siguiente <em>forma estándar</em> {% cite luenberger1984linear%}:</p>
 <p><strong>minimizar</strong>
 \begin{equation*}
 c_1x_1+c_2x_2+c_3x_3+...+c_nx_n
@@ -115,8 +115,49 @@ r14:\sum_{t=1}^{12} x_{inv,t}&gt;=8
 \end{equation*}<p>Así mismo, existen escenarios donde se contemplan de manera simultánea varias variables pero no en su totalidad, suponga ahora que durante los primeros tres meses la cantidad comprada debe ser inferior a seis toneladas. La nueva restricción será:</p>
 \begin{equation*}
 r15:x_{inv,1}+x_{inv,2}+x_{inv,3}&lt;=6
-\end{equation*}<p>{% cite holdgraf_evidence_2014 ruby%}</p>
-<h3 id="Construir-el-espacio-de-soluciones">Construir el espacio de soluciones<a class="anchor-link" href="#Construir-el-espacio-de-soluciones"> </a></h3>
+\end{equation*}<p>Ahora bien, teniendo en cuenta que en un PL suelen existir múltiples restricciones que no consideran todas las variables, es posible incluirlas premultiplicándolas por el valor de $0$. A modo de ejemplo, es posible reescribir la ecuación 15 de la siguiente manera:</p>
+\begin{equation*}
+r15:x_{inv,1}+x_{inv,2}+x_{inv,3}+0x_{inv,4}+0x_{inv,5}+0x_{inv,6}+0x_{inv,7}+0x_{inv,8}+0x_{inv,9}+0x_{inv,10}+0x_{inv,11}+0x_{inv,12}&lt;=6
+\end{equation*}<p>Teniendo en cuenta lo anterior, es posible aplicar el mismo procedimiento a todas las restricciones. Para el ejemplo se tendrían 15 restricciones con 12 variables:</p>
+\begin{equation*}
+r1:x_{inv,1}+0x_{inv,2}+0x_{inv,3}+\dots+0x_{inv,12}&lt;=1\\
+r2:0x_{inv,1}+x_{inv,2}+0x_{inv,3}+\dots+0x_{inv,12}&lt;=1\\
+r3:0x_{inv,1}+0x_{inv,2}+x_{inv,3}+\dots+0x_{inv,12}&lt;=2\\
+\vdots \:\:\:\:\:\:\:\:\:\: \:\:\:\:\:\:\:\:\:\:\:\:\:\:\ddots  \:\:\:\:\:\:\:\:\:\: \:\:\:\:\:\:\:\:\:\:\:\:\:\:\vdots \\
+r15:x_{inv,1}+x_{inv,2}+x_{inv,3}+\dots+0x_{inv,12}&lt;=6
+\end{equation*}<p>Dicho lo anterior, al tener presentes todas las variables es posible reescribir el conjunto de restricciones como la operación entre una matriz de cargas (los valores que premutiplican a las variables de decisión), y el vector columna de las variables de decisión. Esta multiplicación entre matrices relaciona la cantidad de restricciones ($m$), con el número de variables ($n$), y genera un vector columna de $m$ elementos. En el ejemplo descrito anteriormente, $m=15, n=12$, los coeficientes de la matriz de restricciones son:</p>
+<p>A = \begin{bmatrix} 
+    1 &amp; 0 &amp; 0 &amp; \dots &amp; 0 \\
+    0 &amp; 1 &amp; 0 &amp; \dots &amp; 0 \\
+    0 &amp; 0 &amp; 1 &amp; \dots &amp; 0 \\
+    \vdots &amp; \ddots &amp; \\
+    1 &amp; 1 &amp; 1 &amp; \dots &amp; 0 
+    \end{bmatrix}</p>
+<p>Y el vector de variables es:</p>
+<p>x = \begin{bmatrix} 
+    x_{inv,1} \\
+    x_{inv,2} \\
+    x_{inv,3} \\
+    \vdots \\
+    x_{inv,12}
+    \end{bmatrix}</p>
+<p>Entonces, para el ejemplo:</p>
+<p><strong>\begin{equation*}
+A*x&lt;=b
+\end{equation*}</strong></p>
+<p>Donde <strong>$b$</strong> es el vector columna de decisiones:</p>
+<p>b = \begin{bmatrix} 
+    b_{1}=1 \\
+    b_{2}=1 \\
+    b_{3}=2 \\
+    \vdots \\
+    b_{15}=6
+    \end{bmatrix}</p>
+<p>Lo cual se estructura de manera muy similar a la forma estándar de un PL, con la diferencia de presentar restricciones de desigualdad en vez de igualdad; no obstante, toda desigualdad puede ser reescrita como una igualdad mediante el uso de variables auxiliares. esta estrategia será abordada más delante en la sección donde se explica el método de solución Simplex.</p>
+<p>A modo de cierre, múltiples problemas de programación lineal pueden ser modelados siguiendo la estructura de restricciones previamente mostrada. Ahora bien, diversas situaciones requieren aplicar distintas estructuras como el uso de variables auxiliares para restricciones excluyentes, el el manejo de variables que relacionen asignaciones con magnitudes. Dichas aproximaciones puden ser profundizadas en el trabajo de Williams {% cite williams2013model%}.</p>
+<h3 id="Construir-el-espacio-de-soluciones">Construir el espacio de soluciones<a class="anchor-link" href="#Construir-el-espacio-de-soluciones"> </a></h3><p>Una vez definido el conjunto que contiene a posibles soluciones teniendo en cuenta las restricciones del problema, se generan las soluciones alternativas. En la práctica, no se calculan todas las posibles soluciones puesto que dependiendo del problema pueden existir infinitas; por tanto, los métodos para resolver un PL parten de una solución base, y exploran el espacio de búsqueda (hacen cambios en los valores de las variables) de manera iterativa hasta encontrar la mejor solución posible. Dichos métodos serán ahondados más adelante; sin embargo, una aproximación gráfica a la relación entre un par de variables de decisión y su correspondientes espacio de búsqueda (para una única función objetivo) se muestra a continuación. Donde hay dos variables de decisión $\{x_1,x_2\}$ y una función objetivo $FO$, ésta transforma el conjunto de decisiones $R^2$ en un conjunto de posibles soluciones $R$, es decir, por cada posible decisión $\{x_1,x_2\}$  hay asociada mediante una función lineal una solución $z_i$, la figura indica el proceso para $k$ posibles soluciones. En la práctica, se busca seleccionar la mejor solución (máximo o mínimo) de la recta $FO$</p>
+<p><img src="Espacio de soluciones.png" alt="Muestra la relación entre un espacio de búsqueda en 2D, con una función objetivo" title="Relación entre un espacio de búsqueda en 2D con uno de solución en 1D" /></p>
+
 </div>
 </div>
 </div>
@@ -127,7 +168,18 @@ r15:x_{inv,1}+x_{inv,2}+x_{inv,3}&lt;=6
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como conclusión, estos son los pasos requeridos para solucionar un problema de programación lineal:</p>
-<p><img src="Pasos para hacer un Modelo.png"  alt="Pasos para hacer un modelo lineal" title="Pasos para hacer un modelo lineal" /></p>
+<p><img src="Pasos para hacer un Modelo.png" width="300" alt="Pasos para hacer un modelo lineal" title="Pasos para hacer un modelo lineal" /></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Biograf&#237;a">Biograf&#237;a<a class="anchor-link" href="#Biograf&#237;a"> </a></h2><p>{% bibliography --cited %}</p>
 
 </div>
 </div>
