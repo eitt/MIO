@@ -11,7 +11,7 @@ prev_page:
 next_page:
   url: /pl/mg/2.html
 suffix: .ipynb
-search: de la se el en que los es un x variables y o r para las por equation grfico manera con funcin una como mtodo ejemplo espacio puede puntos ggplot l bsqueda dos s implantes restriccin frac construccin problemas decisin pl ms variable z son cite satisface begin end paquete data desmos lineal partir del anlisis su objetivo donde esta siguiente entre recursos cada productos estructura conjunto desigualdad recta igual al lmite p resolucin programacin ste slo condicin comn sin embargo posible describir permite dimensiones corresponden eje plano relacin ax ecuacin pre multiplican general compiten tipo implante materia prima necesario
+search: de la el se x que en y es los para con un una restriccin r por l grfico las variables funcin o como equation ejemplo manera s puntos ggplot variable puede restricciones labs mtodo espacio dos donde paquete colores bsqueda decisin del permite su implantes cada necesario cite recta begin end c frac cdigo data construccin problemas pl ms ejes z siguiente son estructura satisface desigualdad al grfica definir p desmos lineal partir anlisis posible objetivo abscisas eje esta respectiva entre recursos fin productos indica conjunto caso ser igual punto funciones utilizar generar continuacin graficar lmite genera fun factor
 
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -68,13 +68,13 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 \begin{equation*}
 𝑥_1=\frac{1.5𝑥_2-6}{-2}=&gt;𝑥_1=\frac{-3}{4}𝑥_2+3 
 \end{equation*}<p>Según la variable que se desee expresar como dependiente.</p>
-<p>Ahora bien, esta relación al estar en $R^2$ puede ser representada de manera gráfica. En <em>R</em> es posible realziar gráficas de funciones, para ello son necesarios los siguientes pasos:</p>
+<p>Ahora bien, esta relación al estar en $R^2$ puede ser representada de manera gráfica. En <em>R</em> es posible realizar gráficas de funciones, para ello son necesarios los siguientes pasos:</p>
 <ol>
 <li>Definir la función.</li>
-<li>Determinar el dominio de la variable en el eje de las absisas.</li>
-<li>Utilziar un paquete <em>package</em> de gráficos.</li>
+<li>Determinar el dominio de la variable en el eje de las abscisas.</li>
+<li>Utilizar un paquete <em>package</em> de gráficos.</li>
 </ol>
-<p>Por lo general, como buena práctica se cargan los paquetes al principio de cada código. Como tal se trabajará con el paquete <a href="https://ggplot2.tidyverse.org/">ggplot2</a> éste permite generar  manera flexible diferentes tipso de gráficos, para ahondar más se pueden consultar <em>R for data science</em> {% cite wickham2016r%}, <em>ggplot2: elegant graphics for data analysis</em> {% cite wickham2016ggplot2%}, y <em>R graphics cookbook</em> {% cite chang2018r%}. A continuación se muestra la manera en la cual se puede graficar la restricción de ejemplo $𝑥_2=4−\frac{4}{3}𝑥_1$</p>
+<p>Por lo general, como buena práctica se cargan los paquetes al principio de cada código. Como tal se trabajará con el paquete <a href="https://ggplot2.tidyverse.org/">ggplot2</a> éste permite generar de manera flexible diferentes tipos de gráficos, para ahondar más se pueden consultar <em>R for data science</em> {% cite wickham2016r%}, <em>ggplot2: elegant graphics for data analysis</em> {% cite wickham2016ggplot2%}, y <em>R graphics cookbook</em> {% cite chang2018r%}. A continuación se muestra la manera en la cual se puede graficar la restricción de ejemplo $r.1=𝑥_2=4−\frac{4}{3}𝑥_1$</p>
 <div class="highlight"><pre><span></span><span class="c1">#1. Se carga el paquete</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 <span class="c1">#2. Se define la función relacionada con la restricción 1 (r.1)</span>
@@ -92,6 +92,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <span class="c1">#Se agrega la función definida previamente, incluyendo los límites.</span>
 <span class="n">p</span> <span class="o">+</span> <span class="nf">stat_function</span><span class="p">(</span><span class="n">fun</span> <span class="o">=</span> <span class="n">fun.1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">xlim</span><span class="p">(</span><span class="n">l.i</span><span class="p">,</span><span class="n">l.s</span><span class="p">)</span>
 </pre></div>
+<p>En resumen, la ejecución del código y su respectiva gráfica se indica a continuación.</p>
 
 </div>
 </div>
@@ -107,19 +108,19 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#1. Se carga el paquete</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
-<span class="c1">#2. Se define la función relacionada con la restricción 1 (r1)</span>
-<span class="n">r1</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span><span class="m">4-4</span><span class="o">/</span><span class="m">3</span><span class="o">*</span><span class="n">x</span><span class="p">}</span>
+<span class="c1">#2. Se define la función relacionada con la restricción 1 (r.1)</span>
+<span class="n">r.1</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span><span class="m">4-4</span><span class="o">/</span><span class="m">3</span><span class="o">*</span><span class="n">x</span><span class="p">}</span>
 <span class="c1">#3. Se declaran los límites:</span>
-<span class="c1">#Límite inferior (li)</span>
-<span class="n">li</span> <span class="o">&lt;-</span> <span class="m">0</span> <span class="c1">#Las variables normalmente son restrictas y mayores o iguales a cero</span>
-<span class="c1">#Límite superior (ls)</span>
-<span class="n">ls</span> <span class="o">&lt;-</span> <span class="m">10</span> <span class="c1">#Límite arbitrario</span>
+<span class="c1">#Límite inferior (l.i)</span>
+<span class="n">l.i</span> <span class="o">&lt;-</span> <span class="m">0</span> <span class="c1">#Las variables normalmente son restrictas y mayores o iguales a cero</span>
+<span class="c1">#Límite superior (l.s)</span>
+<span class="n">l.s</span> <span class="o">&lt;-</span> <span class="m">10</span> <span class="c1">#Límite arbitrario</span>
 
 <span class="c1">#Se acostumbra a almacenar la gráfica en una variable denominada p (por gráfico en inglés)</span>
 <span class="c1">#Se genera un conjunto de datos artificial para generar la estructura base</span>
 <span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="m">0</span><span class="p">),</span> <span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">))</span>
 <span class="c1">#Se agrega la función definida previamente, incluyendo los límites.</span>
-<span class="n">p</span> <span class="o">+</span> <span class="nf">stat_function</span><span class="p">(</span><span class="n">fun</span> <span class="o">=</span> <span class="n">r1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">xlim</span><span class="p">(</span><span class="n">li</span><span class="p">,</span><span class="n">ls</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">+</span> <span class="nf">stat_function</span><span class="p">(</span><span class="n">fun</span> <span class="o">=</span> <span class="n">r.1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">xlim</span><span class="p">(</span><span class="n">l.i</span><span class="p">,</span><span class="n">l.s</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -144,6 +145,220 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 </div>
 </div>
 
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Como tal, la función resultante genera una gráfica de línea recta, donde a medida que aumenta el valor de la variable en el eje de las abscisas, disminuye el de la variable ordenada. Como por defecto el paquete de <code>ggplot2</code> genera un gráfico con ejes denominados $x$ y $y$, a continuación, se agrega una estructura de código que permite personalizar el gráfico. El parámetro <code>colour</code> permite cambiar el color del gráfico, mientras <code>labs</code> configura el título de los ejes para $x_1$  <code>labs(x = "x1")</code>, y $x_2$ <code>labs(y = "x2")</code> respectivamente.</p>
+<div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">+</span> <span class="nf">stat_function</span><span class="p">(</span><span class="n">fun</span> <span class="o">=</span> <span class="n">r.1</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span><span class="o">+</span> <span class="nf">xlim</span><span class="p">(</span><span class="n">l.i</span><span class="p">,</span><span class="n">l.s</span><span class="p">)</span> <span class="o">+</span> <span class="nf">labs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">&quot;x1&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">labs</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="s">&quot;x2&quot;</span><span class="p">)</span>
+</pre></div>
+<p>De la recta se puede concluir que existen infinitos puntos $(x_1,x_2)$ que satisfacen la restricción, en consecuencia, la decisión será cuál par de puntos optimiza la función FO.</p>
+<p>En caso de querer visualizar otra restricción de manera simultánea, es necesario definir funciones extras, una por cada nueva restricción, y añadirlas al gráfico. Con el fin de estandarizar el esquema de colores a utilizar se trabajará con la paleta Dark2 <a href="http://colorbrewer2.org/">RColorBrewer</a> desarrollada por Neuwirth y otros {% cite neuwirth2014colorbrewer%}. Para utilizar los colores es necesario cargar el paquete mediante la instancia <code>library(RColorBrewer)</code>la visualización de los colores y su respectiva codificación hexadecimal es:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">RColorBrewer</span><span class="p">)</span>
+<span class="c1"># Visualización de los colores</span>
+<span class="nf">display.brewer.pal</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Dark2&#39;</span><span class="p">)</span>
+<span class="c1"># Color en notación Hexadecimal</span>
+<span class="nf">brewer.pal</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Dark2&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<ol class=list-inline>
+	<li>'#1B9E77'</li>
+	<li>'#D95F02'</li>
+	<li>'#7570B3'</li>
+	<li>'#E7298A'</li>
+	<li>'#66A61E'</li>
+	<li>'#E6AB02'</li>
+	<li>'#A6761D'</li>
+	<li>'#666666'</li>
+</ol>
+
+</div>
+
+</div>
+</div>
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../../images/pl/mg/1_5_1.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Para finalizar, se generará a modo de ejemplo otra restricción con el fin de indicar cómo graficar múltiples restricciones utilizando el código de <code>ggplot2</code>. Se considerará la siguiente restricción:</p>
+\begin{equation*}
+r2:𝑥_2=-1+𝑥_1
+\end{equation*}<p>Repitiendo el proceso, es necesario definir la segunda función con sus respectivos colores, además. se debe definir un rango para cada una de las restricciones, por ejemplo, para la restricción 1 es: <code>rango.1 &lt;- data.frame(x=c(l.i, l.s), Functions = factor(1))</code>, donde <code>x=c(l.i, l.s)</code> indica el dominio de la variable $x_1$, y <code>Functions = factor(1))</code> permite agrupar múltiples funciones como un factor. En cuanto a los colores, la paleta se asigna manualmente mediante el código mostrado anteriormente <code>scale_colour_manual(values = c("#1B9E77", "#D95F02")</code> (los dos primeros colores). Para finalizar, <code>labels = c("Restricción 1", "Restricción 2")</code>y <code>labs(x = "x1") + labs(y = "x2")</code> generan las leyendas y títulos de los ejes respectivamente.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#Primera restricción</span>
+<span class="n">r.1</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="m">4-4</span><span class="o">/</span><span class="m">3</span><span class="o">*</span><span class="n">x</span>
+<span class="c1">#Segunda restricción</span>
+<span class="n">r.2</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="m">-1</span><span class="o">+</span><span class="n">x</span>
+<span class="c1">#Rangos para cada restricción</span>
+<span class="n">rango.1</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">l.i</span><span class="p">,</span> <span class="n">l.s</span><span class="p">),</span> <span class="n">Functions</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="m">1</span><span class="p">))</span>
+<span class="n">rango.2</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">l.i</span><span class="p">,</span> <span class="n">l.s</span><span class="p">),</span> <span class="n">Functions</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="m">2</span><span class="p">))</span>
+<span class="c1">#Generación del gráfico</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">Functions</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">stat_function</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">plot.range1</span><span class="p">,</span> <span class="n">fun</span> <span class="o">=</span> <span class="n">r.1</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">stat_function</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">plot.range2</span><span class="p">,</span> <span class="n">fun</span> <span class="o">=</span> <span class="n">r.2</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;#1B9E77&quot;</span><span class="p">,</span> <span class="s">&quot;#D95F02&quot;</span><span class="p">),</span> <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Restricción 1&quot;</span><span class="p">,</span> <span class="s">&quot;Restricción 2&quot;</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">labs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">&quot;x1&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">labs</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="s">&quot;x2&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../../images/pl/mg/1_7_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Es importante resaltar que, cuando se trabajan con restricciones de igualdad es posible que no exista una solución, para el caso mostrado anteriormente, existe una única solución y corresponde con el punto donde ambas soluciones se cruzan, es decir, el punto que cumple con ambas restricciones.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Restricciones-de-desigualdad">Restricciones de desigualdad<a class="anchor-link" href="#Restricciones-de-desigualdad"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#Primera restricción</span>
+<span class="n">r.1</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="m">4-4</span><span class="o">/</span><span class="m">3</span><span class="o">*</span><span class="n">x</span>
+<span class="c1">#Segunda restricción</span>
+<span class="n">r.2</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="m">-1</span><span class="o">+</span><span class="n">x</span>
+<span class="c1">#Rangos para cada restricción</span>
+<span class="n">rango.1</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">l.i</span><span class="p">,</span> <span class="n">l.s</span><span class="p">),</span> <span class="n">Functions</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="m">1</span><span class="p">))</span>
+<span class="n">rango.2</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">l.i</span><span class="p">,</span> <span class="n">l.s</span><span class="p">),</span> <span class="n">Functions</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="m">2</span><span class="p">))</span>
+<span class="c1">#Generación del gráfico</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">Functions</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">stat_function</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">plot.range1</span><span class="p">,</span> <span class="n">fun</span> <span class="o">=</span> <span class="n">r.1</span><span class="p">,</span><span class="n">geom</span><span class="o">=</span><span class="s">&quot;area&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s">&quot;#1B9E77&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="m">0.3</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">stat_function</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">plot.range2</span><span class="p">,</span> <span class="n">fun</span> <span class="o">=</span> <span class="n">r.2</span><span class="p">,</span><span class="n">geom</span><span class="o">=</span><span class="s">&quot;area&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s">&quot;#D95F02&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="m">0.3</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;#1B9E77&quot;</span><span class="p">,</span> <span class="s">&quot;#D95F02&quot;</span><span class="p">),</span> <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Restricción 1&quot;</span><span class="p">,</span> <span class="s">&quot;Restricción 2&quot;</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">labs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">&quot;x1&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">labs</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="s">&quot;x2&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../../images/pl/mg/1_10_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Biograf&#237;a">Biograf&#237;a<a class="anchor-link" href="#Biograf&#237;a"> </a></h2><p>{% bibliography --cited %}</p>
+
+</div>
+</div>
 </div>
 </div>
 
