@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Método Gráfico</title>
-  <meta name="description" content="        Método Gráfico    Introducci&#243;n El método gráfico para la resolución de problemas de programación lineal es comunmente utilizado de manera introd...">
+  <meta name="description" content="        Método Gráfico    Introducci&#243;n El método gráfico para la resolución de problemas de programación lineal es generalmente utilizado de manera intr...">
 
   <link rel="canonical" href="http://localhost:4000/pl/mg/1.html">
   <link rel="alternate" type="application/rss+xml" title="Jupyter Book" href="http://localhost:4000/feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="http://localhost:4000/pl/mg/1.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Método Gráfico" />
-<meta property="og:description" content="        Método Gráfico    Introducci&#243;n El método gráfico para la resolución de problemas de programación lineal es comunmente utilizado de manera introd..." />
+<meta property="og:description" content="        Método Gráfico    Introducci&#243;n El método gráfico para la resolución de problemas de programación lineal es generalmente utilizado de manera intr..." />
 <meta property="og:image"       content="http://localhost:4000/images/logo/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "http://localhost:4000/pl/mg/1.html",
   "headline": "Método Gráfico",
-  "datePublished": "2019-12-17T12:13:27-05:00",
-  "dateModified": "2019-12-17T12:13:27-05:00",
-  "description": "        Método Gráfico    Introducci&#243;n El método gráfico para la resolución de problemas de programación lineal es comunmente utilizado de manera introd...",
+  "datePublished": "2019-12-18T08:23:13-05:00",
+  "dateModified": "2019-12-18T08:23:13-05:00",
+  "description": "        Método Gráfico    Introducci&#243;n El método gráfico para la resolución de problemas de programación lineal es generalmente utilizado de manera intr...",
   "author": {
     "@type": "Person",
     "name": "The Jupyter Book Community"
@@ -547,10 +547,10 @@ initFunction(initPrint)
     },
     codeMirrorConfig: {
     theme: "abcdef",
-    mode: "python"
+    mode: ""
     },
     kernelOptions: {
-    kernelName: "python3",
+    kernelName: "ir",
     path: "content/pl/mg"
     }
 }
@@ -753,7 +753,7 @@ initFunction(initPrint)
                 href="/pl/mg/2.html"
               >
                 
-                2
+                Ejemplo de un gráfico interactivo
               </a>
             </li>
             
@@ -1182,15 +1182,15 @@ initFunction(initPrint)
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="ejemplo-Desmos.png" alt="Ejemplo de la construcción de un espacio de búsqueda en DESMOS" title="Ejemplo de la construcción de un espacio de búsqueda en DESMOS" /></p>
-<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n"> </a></h2><p>El método gráfico para la resolución de problemas de programación lineal es comunmente utilizado de manera introductoria. Principalmente debido a que éste se aplica cuando existen sólo dos variables de decisión, condición que no es común en la mayoría de problemas; sin embargo, es a partir del análisis gráfico que es posible describir el <a href="/pl/ms/1">Método Simplex</a> que permite la resolución de problemas con más de dos variables.</p>
-<p>En escencia, el método gráfico es un análisis del espacio de búsqueda y su correspondiente función objetivo, con la ventaja de poder representar de manera simultánea tres dimensiones que corresponden a los ejes absisos ($x_1,x_2$) y el eje ordenado de la función objetivo, comunmente descrito con la variable $z$. Por consiguiente, el mñetodo gráfico es el análisis de crecimiento o decrecimiento del plano $z$ que depende de las varaibles $x_1,x_2$, es decir, $z=f(x_1,x_2)$, donde esta relación se puede reescribir de la siguiente manera: $z-a_1x_1-a_2x_2=0$, que la respectiva ecuación de un plano, donde $a_1 y a_2$ son los coeficientes que premultiplican a las variables de decisión.</p>
-<p>De manera general, los problemas de programación lineal implican varaibles de decisión que compiten entre sí por el uso de recursos limitados, por ejemplo, para la construcción de implantes impresos en 3D, una compañía se especializa en el desarrollo de dos tipos de implantes:</p>
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n"> </a></h2><p>El método gráfico para la resolución de problemas de programación lineal es generalmente utilizado de manera introductoria. Principalmente debido a que éste se aplica cuando existen sólo dos variables de decisión, condición que no es común en la mayoría de problemas; sin embargo, es a partir del análisis gráfico que es posible describir el <a href="/pl/ms/1">Método Simplex</a> que permite la resolución de problemas con más de dos variables.</p>
+<p>En esencia, el método gráfico es un análisis del espacio de búsqueda y su correspondiente función objetivo, con la ventaja de poder representar de manera simultánea tres dimensiones que corresponden a los ejes de las abscisas ($x_1,x_2$) y el eje ordenado de la función objetivo, comúnmente descrito con la variable $z$. Por consiguiente, el método gráfico es el análisis de crecimiento o decrecimiento del plano $z$ que depende de las variables $x_1,x_2$, es decir, $z=f(x_1,x_2)$, donde esta relación se puede reescribir de la siguiente manera: $z-a_1x_1-a_2x_2=0$, que la respectiva ecuación de un plano, donde $a_1 y a_2$ son los coeficientes que pre multiplican a las variables de decisión.</p>
+<p>De manera general, los problemas de programación lineal implican variables de decisión que compiten entre sí por el uso de recursos limitados, por ejemplo, para la construcción de implantes impresos en 3D, una compañía se especializa en el desarrollo de dos tipos de implantes:</p>
 <ol>
 <li>Implantes dentales.</li>
 <li>Implantes óseos.</li>
 </ol>
-<p>Con el fin de simplificar, se puede suponer que sólo se fabrica una referencia de cada tipo de implante. Como ambos implantes utilizan la misma materia prima, es necesario decidir cuánto de cada tipo de implante se va a fabricar considerando elementos como la demanda de los productos, la materia prima, ingresos percibidos, y demás elementos o consideraciones que permitan describir el problema a resolver.</p>
-<p>Esta situación (diversos productos que compiten entre sí por recursos) se denomina comunmente mezcla de productos, y su estructura es ampliamente utilizada en diversos campos como: construcción, agricultura, metalurgia, servicios, entre otros. <a class="citation" href="#Heady1954">(Heady, 1954)</a>:</p>
+<p>Con el fin de simplificar, se puede suponer que sólo se fabrica una referencia de cada tipo de implante. Como ambos implantes utilizan la misma materia prima, es necesario decidir cuánto de cada tipo de implante se va a fabricar considerando elementos como la demanda de los productos, los recursos en común (maquinaria, empleados, materia prima, etc.), ingresos percibidos, y demás elementos o consideraciones que permitan describir el problema a resolver.</p>
+<p>Esta situación (diversos productos que compiten entre sí por recursos) se denomina frecuentemente mezcla de productos, y su estructura es ampliamente utilizada en diversos campos como: construcción, agricultura, metalurgia, servicios, entre otros. <a class="citation" href="#Heady1954">(Heady, 1954)</a></p>
 
 </div>
 </div>
@@ -1201,7 +1201,9 @@ initFunction(initPrint)
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<iframe src="https://www.desmos.com/calculator/696bdbbd7z?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
+<h2 id="Espacio-de-b&#250;squeda-en-el-m&#233;todo-gr&#225;fico">Espacio de b&#250;squeda en el m&#233;todo gr&#225;fico<a class="anchor-link" href="#Espacio-de-b&#250;squeda-en-el-m&#233;todo-gr&#225;fico"> </a></h2><p>Como se indica en los <a href="/pl/intro">cinco pasos para modelar un <em>PL</em></a>, una vez definidas las variables, la función objetivo con su respectivo criterio, es necesario construir el espacio de búsqueda, o espacio de restricciones. Para ello, se puede partir de la siguiente inecuación: $𝑓(𝑥_1,𝑥_2)≤𝑏$ o $𝑓(𝑥_1,𝑥_2)≥𝑏$.</p>
+<p>Se puede demostrar que, en dos dimensiones, el conjunto de puntos que satisface una desigualdad lineal (o inecuación) comprende o contiene los puntos en la recta $𝑓(𝑥_1,𝑥_2)=𝑏$, que define la desigualdad más todos los puntos de un lado de la recta (puntos por encima en el caso de ser mayor o igual $"≥"$, o los puntos inferiores para el escenario de menor igual $"≤"$). Sin embargo, en algunos casos no es tan intuitivo determinar qué lado de la recta corresponde a la desigualdad, por tanto, se elige un punto $𝑃$ arbitrario y a partir de este se evalúa la condición de la restricción.</p>
+
 </div>
 </div>
 </div>
@@ -1211,104 +1213,43 @@ initFunction(initPrint)
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#191;C&#243;mo-resolver-un-problema-de-programaci&#243;n-lineal?">&#191;C&#243;mo resolver un problema de programaci&#243;n lineal?<a class="anchor-link" href="#&#191;C&#243;mo-resolver-un-problema-de-programaci&#243;n-lineal?"> </a></h2><p>De manera general, todos los problemas de optimización pueden ser estructurados en cinco pasos, estos parten desde la delimitación del problema o situación a mejorar, su descripción mediante funciones matemáticas, el hallazgo de posibles soluciones y la selección de una solución final, que puede ser óptima o no dependiendo del problema. Los cinco pasos se muestran a continuación.</p>
+<h3 id="Restricciones-de-igualdad">Restricciones de igualdad<a class="anchor-link" href="#Restricciones-de-igualdad"> </a></h3><p>Normalmente un PL de dos variables, cuyas variables de decisión corresponden a $𝑥_1$  y $𝑥_2$, presenta una forma similar a la  siguiente restricción:</p>
+\begin{equation*}
+-2𝑥_1+1.5𝑥_2=6
+\end{equation*}<p>Donde los valores de $-2$ y de $1.5$ que pre multiplican a las variables $𝑥_1,𝑥_2$ son un ejemplo de las posibles realizaciones de la carga $c\in R$. Al observar la ecuación que describe la restricción se encuentra que el mismo conjunto de puntos satisface $(𝑥_1,𝑥_2)$ satisface:</p>
+\begin{equation*}
+1.5𝑥_2=6+2𝑥_1
+\end{equation*}<p>De igual forma satisface:</p>
+\begin{equation*}
+𝑥_2=4−\frac{2}{1.5}𝑥_1=&gt;𝑥_2=4−\frac{4}{3}𝑥_1
+\end{equation*}<p>o:</p>
+\begin{equation*}
+𝑥_1=\frac{1.5𝑥_2-6}{-2}=&gt;𝑥_1=\frac{-3}{4}𝑥_2+3 
+\end{equation*}<p>Según la variable que se desee expresar como dependiente.</p>
+<p>Ahora bien, esta relación al estar en $R^2$ puede ser representada de manera gráfica. En <em>R</em> es posible realziar gráficas de funciones, para ello son necesarios los siguientes pasos:</p>
 <ol>
-<li>Definir las variables de decisión</li>
-<li>Construir la función objetivo</li>
-<li>Determinar el criterio de decisión</li>
-<li>Construir el espacio de búsqueda</li>
-<li>Construir el espacio de soluciones</li>
+<li>Definir la función.</li>
+<li>Determinar el dominio de la variable en el eje de las absisas.</li>
+<li>Utilziar un paquete <em>package</em> de gráficos.</li>
 </ol>
-<h3 id="Definir-las-variables-de-decisi&#243;n">Definir las variables de decisi&#243;n<a class="anchor-link" href="#Definir-las-variables-de-decisi&#243;n"> </a></h3><p>Es fundamental una vez descrito el problema a solucionar determinar el tipo de variables. Según las variables a usar (binarias, enteras, y/o contínuas <a href="/mm/1/01">(Ver la sección de modelado matemático)</a>), es necesario aplicar diferentes métodos de solución, además, dependiendo del fenómeno a modelar algunas variables son más prácticas. Por ejemplo, se acostumbra a utilizar variables binarias para representar las diferentes asignaciones, a modo de ejemplo, la variable $x_{o,m}$ toma el valor de 1 si al operario Pedro trabaja o es asignado a la máquina 4. En este caso $x_{o,m}$ es una matriz que combina todos los posibles operarios (supongamos cinco: $\{Alonso, Beatriz, Carmen, Diego, Efren\}$), con todas las máquinas disponibles, a modo de ejemplo consideremos cuatro máquinas:  $\{m_1, m_2, m_3, m_4\}$, por tanto, $x_{o,m}$ es un conjunto de 20 variables.</p>
-<p>En cuanto a las varaibles enteras y contínuas, estas son afines en su uso y sú implicación práctica para modelar es si la cantidad puede ser fraccionada o no. Por ejemplo, se puede suponer que se desea determinar la cantidad necesaria de impresoras 3D requeridas para fabricar unos repuestos. Si se considera comprar las máquinas, lo más recomendado es usar variables enteras ya que no puedo comprar máquinas a medias; por otro lado, si el problema implica el alquiler de máquinas y estas puedan alquilarse por tiempo parcial, es recomendado trabajar con variables contínuas ya que puedo alquilar 5.5 máquinas, es decir, cinco máquinas tiempo completo y una máquina a medio tiempo.</p>
-<p>Una vez definidas las variables se debe tener presente sus unidades y cómo estás pueden variar en cantidad, tiempo o proporción. En cuanto a la cantidad, ésta va de la mano con el tipo de variable; respecto al tiempo, es importante tener presente si la variable abarca todo el horizonte de planeación o, si esta cambia según el periodo. Retomando el ejemplo de la variable $x_{o,m}$, ésta no parece indicar que cambie en el tiempo, es decir, Pedro trabajará en la máquina 4 durante el periodo completo, por el contrario, si se está asignando el operario a la máquina teniendo en cuenta la demanda mensual y se desea hacer una programación anual,  problemente es necesario redefinir la variable con otro índice: $x_{o,m,t}$, donde $t$ es el periodo de tiempo que dura la asignación, para este ejemplo, doce meses. Por tanto, $x_{o,m,t}$ es un conjunto de 240 variables de decisión $cantidad=5*4*12=240$.</p>
-<p>En cuanto a la proporción, al ser varaibles lineales su cambio tendrá un impacto, por ejemplo, si no es lo mismo que Pedro trabaje en la máquina 4 que en la máquina 1 debido a que él es más proficiente con la máquina 4 que con la 1, entonces si estoy analizando el tiempo que se demora en cáda máquina se espera que sea mayor en la máquina 1 que en la máquina 4, por el contrario, si se está analizando el desperdicio derivado de la operación, se espera que sea menor en la máquina 4 que en la 1. Teniendo esto presente, se debe verificar cómo el cambio en el valor de cada variable de decisión puede afectar elementos como los costos, ingresos, satisfacción, demanda, requerimientos y demás, elementos que serán abordados más adelante.</p>
-<h3 id="Construir-la-funci&#243;n-objetivo">Construir la funci&#243;n objetivo<a class="anchor-link" href="#Construir-la-funci&#243;n-objetivo"> </a></h3><p>Una vez definidas las variables es necesario determinar su impacto en una métrica de calidad, es decir, una vez tomo una decisión ésta genera un impacto en un objetivo de interés. Si se está produciendo implantes impresos en 3D, tal vez el enfoque se relacione con consumo de material, costos de energía, valor de la mano de obra, ingresos, impacto ambiental, y así sucesivamente. De manera general, los objetivos en <em>PL</em> se pueden agrupar en dos grandes categorías: el primero, objetivos de maximizar, esta categoría abarca situaciones como ingresos, utilidad, satisfacción, felicidad, redimientos, eficiencia, es decir, todos los escenarios donde se desea aumentar el valor resultante; en contra parte, el segundo son los objetivos de minimizar, éstos contienen situaciones como costos, dolor, movimientos, desperdicios, deserción y demás; son todas esas situaciones donde se busca disminuir el valor.</p>
-<p>Teniendo en cuenta el tipo de variables y la información disponible, se asigna un peso a cada variable; este peso indica cómo impacta la decisión en la función objetivo. Ejemplificando, si se está comprando insumo plástico para una impresora 3D, y seespera consumir entre 100 kilogramos a 500 kilogramos, donde la variable $x_{inv}$, es la cantidad de inventario que se espera comprar, se puede hallar un costo asociado a la compra, por ejemplo, suponer que cada kilogramo de material plástico cuenta 1000, por tanto, en la función objetivo debe aparecer dentro de la suma de costos dicho peso: $FO=1000x_{inv}$.</p>
-<p>En añadidura, si se está considenrando comprar el material por cada unidad de tiempo durante los doce meses, es espera halla un subíndice extra relacionado con el periodo: $x_{inv,t}$, que indicaría la cantidad de material comprado durante el periodo $t$, en consecuencia, dentro de la función objetivo se espera encontrar todos esos costos asociados:</p>
-\begin{equation*}
-FO=1000x_{inv,1}+1000x_{inv,2},\dots,1000x_{inv,12}
-\end{equation*}<p>Cabe resaltar que al ser costos constantes, es posible reescribir la función factorizando:</p>
-\begin{equation*}
-FO=1000(x_{inv,1}+x_{inv,2},\dots,x_{inv,12})
-\end{equation*}<p>Sin embargo, si los costos cambian según cada periodo (por ejemplo los <em>black friday</em> u eventos similares), no sería posible factorizar y, por tanto, suponiendo costos entre 1000 y 1500, se obtendría la sigueinte función:</p>
-\begin{equation*}
-FO=1500x_{inv,1}+1115x_{inv,2},\dots,1300x_{inv,12}
-\end{equation*}<p>Con el propósito de hacer más compacta la notación, se suele describir los costos como conjuntos que pueden ser vectores o matrices según la cantidad de índices que tenga la variable que están premultiplicando. en este ejemplo, es posible definir un costo $c$ relacionado con el inventario en el tiempo, es decir, $c_{inv,t}$. Teniendo en cuenta lo anterior, y sabiendo que $c_{inv,t}$ puede ser un vector con los siguientes valores:</p>
-<p>$c_{inv,t}=\{1500,1115,1235,1224,1469,1000,1500,1450,1369,1232,1187,1300\}$</p>
-<p>Por tanto, la función objetivo puede expresarse de la siguiente manera:</p>
-\begin{equation*}
-FO=c_{inv,1}x_{inv,1}+c_{inv,2}x_{inv,2},\dots,c_{inv,12}x_{inv,12}
-\end{equation*}<p>Dicha estructura lineal crece a la medida que se consideran más variables o nuevos índices, por consiguiente, con el fin de facilitar la escritura se suele condensar mediante el operador de sumatoria como se muestra a continuación.</p>
-\begin{equation*}
-FO=\sum_{t=1}^{12} c_{inv,t}x_{inv,t}
-\end{equation*}<p>No obstante, teniendo en cuenta que se tienen dos vectores de igual tamaño, uno asociado a los costos y otro relacionado con las variables de decisión. Otra manera de exponer la función objetivo es como el producto punto entre ambos vectores:</p>
-\begin{equation*}
-FO=c_{inv,t}.x_{inv,t}
-\end{equation*}<p>Para finalizar, si bien se ha ejemplificado la construcción de la función objetivo con un caso de costos, el procedimiento es el mismo para los casos de beneficios. En consecuencia, se acostumbra a llamar carga al valor que multiplica dada variable de decisión con el fin de que contemple los escenarios donde aumentar o asignar un valor a la variable impacte tanto positiva como negativamente la FO.</p>
-<h3 id="Determinar-el-criterio-de-decisi&#243;n">Determinar el criterio de decisi&#243;n<a class="anchor-link" href="#Determinar-el-criterio-de-decisi&#243;n"> </a></h3><p>De manera paralela a la construcción de la función objetivo se determina el criterio de decisión, éste se agrupa en dos categorías que van de la mano con los grupos de funciones objetivo: Máximizar, es decir, asignar valores a las variables de decisión de tal forma que se encuentre el mayor valor posible, este criterio se aplica para la categoría de maximizar. En contra parte, está el criterio de minimizar que busca el mínimo valor posible de FO.</p>
-<h3 id="Construir-el-espacio-de-b&#250;squeda">Construir el espacio de b&#250;squeda<a class="anchor-link" href="#Construir-el-espacio-de-b&#250;squeda"> </a></h3><p>El espacio de búsqueda es el conjunto de todos los posibles valores que pueden tomar las variables de decisión. Es necesario indicar que comunmente existen restricciones que se deben cumplir y éstas acotan dicho espacio. Retomando el ejemplo de x<em>{inv,t}, existe la posibilidad que la cantidad de material que se compre durante cada mes no deba superar la capacidad de almacenamiento, por tanto, el valor de x</em>{inv,t} no puede superar la capacidad en el instante $t$. Si se supone que se cuenta con una capacidad variable entre una y dos toneladas por mes, a modo de ejemplo se puede tener el siguiente sigueinte vector de capacidades de almacenamiento $cap=\{1,1,2,1,1,1,2,1,1,1,2,2\} [ton]$, en consecuencia se tienen las siguientes doce restricciones asociadas a no comprar más inventario del que se pueda almacenar por mes:</p>
-\begin{equation*}
-r1:x_{inv,1}&lt;=1\\
-r2:x_{inv,2}&lt;=1\\
-r3:x_{inv,3}&lt;=2\\
-r4:x_{inv,4}&lt;=1\\
-r5:x_{inv,5}&lt;=1\\
-r6:x_{inv,6}&lt;=1\\
-r7:x_{inv,7}&lt;=2\\
-r8:x_{inv,8}&lt;=1\\
-r9:x_{inv,9}&lt;=1\\
-r10:x_{inv,10}&lt;=1\\
-r11:x_{inv,11}&lt;=2\\
-r12:x_{inv,12}&lt;=2
-\end{equation*}<p>Además, existen situaciones en las cuales la suma de varias variables deben cumplir con ciertas restricciones. Por ejemplo, se suponga que la cantidad total de inventario por año no debe superar las trece toneladas, ni ser menor a ocho toneladas. Dicha información genera dos nuevas restricciones:</p>
-\begin{equation*}
-r13:\sum_{t=1}^{12} x_{inv,t}&lt;=13 \\
-r14:\sum_{t=1}^{12} x_{inv,t}&gt;=8
-\end{equation*}<p>Así mismo, existen escenarios donde se contemplan de manera simultánea varias variables pero no en su totalidad, suponga ahora que durante los primeros tres meses la cantidad comprada debe ser inferior a seis toneladas. La nueva restricción será:</p>
-\begin{equation*}
-r15:x_{inv,1}+x_{inv,2}+x_{inv,3}&lt;=6
-\end{equation*}<p>Ahora bien, teniendo en cuenta que en un PL suelen existir múltiples restricciones que no consideran todas las variables, es posible incluirlas premultiplicándolas por el valor de $0$. A modo de ejemplo, es posible reescribir la ecuación 15 de la siguiente manera:</p>
-\begin{equation*}
-r15:x_{inv,1}+x_{inv,2}+x_{inv,3}+0x_{inv,4}+0x_{inv,5}+0x_{inv,6}+0x_{inv,7}+0x_{inv,8}+0x_{inv,9}+0x_{inv,10}+0x_{inv,11}+0x_{inv,12}&lt;=6
-\end{equation*}<p>Teniendo en cuenta lo anterior, es posible aplicar el mismo procedimiento a todas las restricciones. Para el ejemplo se tendrían 15 restricciones con 12 variables:</p>
-\begin{equation*}
-r1:x_{inv,1}+0x_{inv,2}+0x_{inv,3}+\dots+0x_{inv,12}&lt;=1\\
-r2:0x_{inv,1}+x_{inv,2}+0x_{inv,3}+\dots+0x_{inv,12}&lt;=1\\
-r3:0x_{inv,1}+0x_{inv,2}+x_{inv,3}+\dots+0x_{inv,12}&lt;=2\\
-\vdots \:\:\:\:\:\:\:\:\:\: \:\:\:\:\:\:\:\:\:\:\:\:\:\:\ddots  \:\:\:\:\:\:\:\:\:\: \:\:\:\:\:\:\:\:\:\:\:\:\:\:\vdots \\
-r15:x_{inv,1}+x_{inv,2}+x_{inv,3}+\dots+0x_{inv,12}&lt;=6
-\end{equation*}<p>Dicho lo anterior, al tener presentes todas las variables es posible reescribir el conjunto de restricciones como la operación entre una matriz de cargas (los valores que premutiplican a las variables de decisión), y el vector columna de las variables de decisión. Esta multiplicación entre matrices relaciona la cantidad de restricciones ($m$), con el número de variables ($n$), y genera un vector columna de $m$ elementos. En el ejemplo descrito anteriormente, $m=15, n=12$, los coeficientes de la matriz de restricciones son:</p>
-<p>A = \begin{bmatrix} 
-    1 &amp; 0 &amp; 0 &amp; \dots &amp; 0 \\
-    0 &amp; 1 &amp; 0 &amp; \dots &amp; 0 \\
-    0 &amp; 0 &amp; 1 &amp; \dots &amp; 0 \\
-    \vdots &amp; \ddots &amp; \\
-    1 &amp; 1 &amp; 1 &amp; \dots &amp; 0 
-    \end{bmatrix}</p>
-<p>Y el vector de variables es:</p>
-<p>x = \begin{bmatrix} 
-    x_{inv,1} \\
-    x_{inv,2} \\
-    x_{inv,3} \\
-    \vdots \\
-    x_{inv,12}
-    \end{bmatrix}</p>
-<p>Entonces, para el ejemplo:</p>
-<p><strong>\begin{equation*}
-A*x&lt;=b
-\end{equation*}</strong></p>
-<p>Donde <strong>$b$</strong> es el vector columna de decisiones:</p>
-<p>b = \begin{bmatrix} 
-    b_{1}=1 \\
-    b_{2}=1 \\
-    b_{3}=2 \\
-    \vdots \\
-    b_{15}=6
-    \end{bmatrix}</p>
-<p>Lo cual se estructura de manera muy similar a la forma estándar de un PL, con la diferencia de presentar restricciones de desigualdad en vez de igualdad; no obstante, toda desigualdad puede ser reescrita como una igualdad mediante el uso de variables auxiliares. esta estrategia será abordada más delante en la sección donde se explica el método de solución Simplex.</p>
-<p>A modo de cierre, múltiples problemas de programación lineal pueden ser modelados siguiendo la estructura de restricciones previamente mostrada. Ahora bien, diversas situaciones requieren aplicar distintas estructuras como el uso de variables auxiliares para restricciones excluyentes, el el manejo de variables que relacionen asignaciones con magnitudes. Dichas aproximaciones puden ser profundizadas en el trabajo de Williams <a class="citation" href="#williams2013model">(Williams, 2013)</a>.</p>
-<h3 id="Construir-el-espacio-de-soluciones">Construir el espacio de soluciones<a class="anchor-link" href="#Construir-el-espacio-de-soluciones"> </a></h3><p>Una vez definido el conjunto que contiene a posibles soluciones teniendo en cuenta las restricciones del problema, se generan las soluciones alternativas. En la práctica, no se calculan todas las posibles soluciones puesto que dependiendo del problema pueden existir infinitas; por tanto, los métodos para resolver un PL parten de una solución base, y exploran el espacio de búsqueda (hacen cambios en los valores de las variables) de manera iterativa hasta encontrar la mejor solución posible. Dichos métodos serán ahondados más adelante; sin embargo, una aproximación gráfica a la relación entre un par de variables de decisión y su correspondientes espacio de búsqueda (para una única función objetivo) se muestra a continuación. Donde hay dos variables de decisión $\{x_1,x_2\}$ y una función objetivo $FO$, ésta transforma el conjunto de decisiones $R^2$ en un conjunto de posibles soluciones $R$, es decir, por cada posible decisión $\{x_1,x_2\}$  hay asociada mediante una función lineal una solución $z_i$, la figura indica el proceso para $k$ posibles soluciones. En la práctica, se busca seleccionar la mejor solución (máximo o mínimo) de la recta $FO$</p>
+<p>Por lo general, como buena práctica se cargan los paquetes al principio de cada código. Como tal se trabajará con el paquete <a href="https://ggplot2.tidyverse.org/">ggplot2</a> éste permite generar  manera flexible diferentes tipso de gráficos, para ahondar más se pueden consultar <em>R for data science</em> <a class="citation" href="#wickham2016r">(Wickham &amp; Grolemund, 2016)</a>, <em>ggplot2: elegant graphics for data analysis</em> <a class="citation" href="#wickham2016ggplot2">(Wickham, 2016)</a>, y <em>R graphics cookbook</em> <a class="citation" href="#chang2018r">(Chang, 2018)</a>. A continuación se muestra la manera en la cual se puede graficar la restricción de ejemplo $𝑥_2=4−\frac{4}{3}𝑥_1$</p>
+<div class="highlight"><pre><span></span><span class="c1">#1. Se carga el paquete</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="c1">#2. Se define la función relacionada con la restricción 1 (r.1)</span>
+<span class="n">r.1</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="m">4-4</span><span class="o">/</span><span class="m">3</span><span class="o">*</span><span class="n">x</span>
+<span class="c1">#3. Se declaran los límites:</span>
+<span class="c1">#Límite inferior (l.i)</span>
+<span class="n">l.i</span> <span class="o">&lt;-</span> <span class="m">0</span> <span class="c1">#Las variables normalmente son restrictas y mayores o iguales a cero</span>
+<span class="c1">#Límite superior (l.s)</span>
+<span class="n">l.s</span> <span class="o">&lt;-</span> <span class="m">10</span> <span class="c1">#Límite arbitrario</span>
+</pre></div>
+<p>Una vez definida la estructura de la función, se procede a graficar utilizando el paquete <code>ggplot2</code></p>
+<div class="highlight"><pre><span></span><span class="c1">#Se acostumbra a almacenar la gráfica en una variable denominada p (por gráfico en inglés)</span>
+<span class="c1">#Se genera un conjunto de datos artificial para generar la estructura base</span>
+<span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="m">0</span><span class="p">),</span> <span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">))</span>
+<span class="c1">#Se agrega la función definida previamente, incluyendo los límites.</span>
+<span class="n">p</span> <span class="o">+</span> <span class="nf">stat_function</span><span class="p">(</span><span class="n">fun</span> <span class="o">=</span> <span class="n">fun.1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">xlim</span><span class="p">(</span><span class="n">l.i</span><span class="p">,</span><span class="n">l.s</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
@@ -1317,21 +1258,54 @@ A*x&lt;=b
 
 <div class="jb_cell">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Biograf&#237;a">Biograf&#237;a<a class="anchor-link" href="#Biograf&#237;a"> </a></h2><p><ol class="bibliography"><li><span id="Heady1954">Heady, E. O. (1954). Simplified Presentation and Logical Aspects of Linear Programming Technique. <i>American Journal of Agricultural Economics</i>, <i>36</i>(5), 1035–1048. https://doi.org/10.2307/1234313</span></li>
-<li><span id="williams2013model">Williams, H. P. (2013). <i>Model building in mathematical programming</i>. John Wiley &amp; Sons.</span></li></ol></p>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#1. Se carga el paquete</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="c1">#2. Se define la función relacionada con la restricción 1 (r1)</span>
+<span class="n">r1</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span><span class="m">4-4</span><span class="o">/</span><span class="m">3</span><span class="o">*</span><span class="n">x</span><span class="p">}</span>
+<span class="c1">#3. Se declaran los límites:</span>
+<span class="c1">#Límite inferior (li)</span>
+<span class="n">li</span> <span class="o">&lt;-</span> <span class="m">0</span> <span class="c1">#Las variables normalmente son restrictas y mayores o iguales a cero</span>
+<span class="c1">#Límite superior (ls)</span>
+<span class="n">ls</span> <span class="o">&lt;-</span> <span class="m">10</span> <span class="c1">#Límite arbitrario</span>
+
+<span class="c1">#Se acostumbra a almacenar la gráfica en una variable denominada p (por gráfico en inglés)</span>
+<span class="c1">#Se genera un conjunto de datos artificial para generar la estructura base</span>
+<span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="m">0</span><span class="p">),</span> <span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">))</span>
+<span class="c1">#Se agrega la función definida previamente, incluyendo los límites.</span>
+<span class="n">p</span> <span class="o">+</span> <span class="nf">stat_function</span><span class="p">(</span><span class="n">fun</span> <span class="o">=</span> <span class="n">r1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">xlim</span><span class="p">(</span><span class="n">li</span><span class="p">,</span><span class="n">ls</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../../images/pl/mg/1_3_0.png"
+>
+</div>
 
 </div>
 </div>
+</div>
+</div>
+
 </div>
 </div>
 
  
-
-<script type="application/vnd.jupyter.widget-state+json">
-{"state": {}, "version_major": 2, "version_minor": 0}
-</script>
 
 
     </main>
@@ -1354,7 +1328,7 @@ A*x&lt;=b
 
     
     <a id="js-page__nav__next" class="c-page__nav__next" href="/pl/mg/2.html">
-      2 <span class="u-margin-right-tiny"></span> 〉
+      Ejemplo de un gráfico interactivo <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>
